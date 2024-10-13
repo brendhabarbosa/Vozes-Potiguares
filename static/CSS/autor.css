@@ -1,0 +1,225 @@
+
+#container{
+    display: inline-block;
+    position: relative;
+}
+.pag_autor{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-right:24px;
+}
+.pag_autor > #nome{
+    color: #014040;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+}
+.pag_autor > #user{
+    color: #014040;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+
+}
+.pag_autor > #obra_principal{
+    color: #014040;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+}
+
+#infos{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+#obras{
+    display: flex;
+    flex-direction: column;
+    background-color:#9bb6a6a1;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+.alinharperfileinformações{
+    display: flex;
+    max-width: 1200px;
+    margin: 5px 5px 5px 5px;
+    border: 4px solid #014040;
+    padding: 10px;
+    justify-content: space-between;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    gap: 64px;  
+}
+.informações > p{
+    color: #014040;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+}
+#sobre_o_autor{
+    color: #9BB6A6;
+}
+#perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number{
+    text-align: center;
+    margin-bottom: 7px;
+}
+button{
+    font-weight: 700;
+    background-color: #FFFFFF;
+    color: #014040;
+    display: flex;
+    font-size: larger;
+    border-radius: 4px;
+    border: 1px solid #014040;
+    margin: auto;
+    height: 37px;
+    padding: 16px 12px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#img{
+    background: url('static/IMG/Rectangle\ 51.png') center center;
+    max-width: 1250px;
+    height: 480px;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+#sobrecurtidos{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+.nome_genero > h2{
+    font-size: 32px;
+    color: #014040;
+
+}
+.nome_genero > p{
+    font-size: 24px;
+    color: #014040;
+    font-weight: 700
+
+}
+.sobre_o_autor{
+    width: 297px;
+    height: 649px;
+    flex-shrink: 0;
+    background-color: #9bb6a696;
+    margin-left: 10px;
+    margin-top: 20px;
+
+}
+.sobre_o_autor p{
+    text-align: justify;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #014040;             
+    }
+#englobar{
+    display: grid;
+    grid-template-columns: 1fr 297px;
+    align-items: flex-start;
+    justify-content: center;
+}
+#principal{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#baixo{
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (max-width: 1024px) {
+  header nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 16px;
+  }
+
+  header nav div:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+ }
+  header nav div:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+
+
+  #linhaverdefina:not(.small-screen) {
+    display: none;
+  }
+
+  #linhaverdefina.small-screen {
+    display: block;
+  }
+
+  .informações {
+    display: none;
+  }
+
+  .perfil {
+    gap: 24px;
+  }
+
+  .perfil img {
+    width: 120px;
+  }
+
+  .perfil h2 {
+    font-size: 24px;
+  }
+
+  .perfil p {
+    font-size: 20px;
+  }
+}
+
+@media(max-width: 700px){
+  #qnt_curtidas{
+    display: none;
+  }
+  #infos > li > a{
+    font-size: 16px;
+  }
+  .number{
+    text-align: center;
+    font-size: 16px;
+  }
+ 
+  #englobar {
+    grid-template-columns: 1fr;
+  } 
+
+  div.sobre_o_autor {
+    width: 100%;
+    margin: 0;
+  }
+}

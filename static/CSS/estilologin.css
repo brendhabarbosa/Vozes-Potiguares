@@ -1,0 +1,137 @@
+*{
+    margin: auto;
+    font-family: sans-serif;
+    padding: 0;
+    background-color: #014040;
+    max-width: 1440px;
+    box-sizing: border-box;
+}
+
+h1{
+    color: #FFF;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.cabeçalhodelogin{
+    text-align: center;
+    padding: 16px;
+    gap: 12px;
+    
+}
+.cabeçalhodelogin > p{
+    color: #84998D;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+#esquecadras a {
+    width: 253px;
+    height: 15px;
+    flex-shrink: 0;
+    color: #84998D;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    
+
+}
+#esquecadras > a > p{
+    margin: 8px;
+}
+
+form > div  label{
+    color: #D6F1E2;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    
+}
+button{
+    display: block;
+    display: flex;
+    width: 400px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 4px;
+    background: #F8D47A;
+    color: #014040;
+    font-weight: bold;
+}
+
+
+form > div  input{
+    width: 400px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: #496863;
+    color: #84998D;
+    font-weight: bold;
+
+}
+
+form .input {
+    display:inline-flex;
+    border-radius: 4px;
+    background: #496863;
+    
+}
+form .input input {
+    background: url('../IMG/LockKey.png');
+    background-repeat: no-repeat;
+    background-position:  10px center;
+    padding-left: 40px;
+    background-size: 24px 24px;
+}
+
+form .estiloemail{
+    background: url('../IMG/EnvelopeSimple.png');
+    background-repeat: no-repeat;
+    background-position:  10px center;
+    padding-left: 40px;
+    background-size: 24px 24px;
+    background-color: #496863;
+}
+
+form > .alinharinput{
+    text-align: left;
+ 
+}
+.alinharinput{
+    display: inline-block;
+    gap: 12px;
+    margin: 16px;
+    
+}
+input::placeholder{
+    color: #84998D;
+}
+
+label{
+    margin: 0%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    
+}
+
+@media (max-width: 600px) {
+    form > div > input, button, .alinharinput{ 
+        width: 100% ;
+        box-sizing: border-box;
+    }
+
+    .alinharinput {
+        margin: 16px 0;
+    }
+}

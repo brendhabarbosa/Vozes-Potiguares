@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Título Padrão{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="Menu">
+                <div class="Titulodomenu">Menu<span id="fechar" class="material-symbols-outlined">close</span></div>
+            <ul>
+                <li><a href="@">Tela Principal</a></li>
+                <li><a href="@">Perfil</a></li>
+                <li><a class="Cidades">Cidades<span class="material-symbols-outlined">chevron_right</span></a>
+                    <ul class="CddO">
+                        <li><a href="@">Água nova</a></li>
+                        <li><a href="@">Alexandria</a></li>
+                        <li><a href="@">Álmino Afonso</a></li>
+                        <li><a href="@">Antônio Martins</a></li>
+                        <li><a href="@">Coronel João Pessoa</a></li>
+                        <li><a href="@">Doutor Severiano</a></li>
+                        <li><a href="@">Encanto</a></li>
+                        <li><a href="@">Francisco Dantas</a></li>
+                        <li><a href="">Frutuoso Gomes</a></li>
+                        <li><a href="">João Dias</a></li>
+                        <li><a href="">José da Penha</a></li>
+                        <li><a href="">Luís Gomes</a></li>
+                        <li><a href="">Lucrécia</a></li>
+                        <li><a href="">Major Sales</a></li>
+                        <li><a href="">Marcelino Vieira</a></li>
+                        <li><a href="">Martins</a></li>
+                        <li><a href="">Pau dos Ferros</a></li>
+                        <li><a href="">Paraná</a></li>
+                        <li><a href="">Pilões</a></li>
+                        <li><a href="">Portalegre</a></li>
+                        <li><a href="">Rafael Fernandes</a></li>
+                        <li><a href="">Riacho da Cruz</a></li>
+                        <li><a href="">Riacho de Santana</a></li>
+                        <li><a href="">São Francisco do Oeste</a></li>
+                        <li><a href="">São Miguel</a></li>
+                        <li><a href="">Serrinha dos Pintos</a></li>
+                        <li><a href="">Tenente Ananias</a></li>
+                        <li><a href="">Taboleiro Grande</a></li>
+                        <li><a href="">Venha-ver</a></li>
+                        <li><a href="">Viçosa</a></li>
+                    </ul>
+                </li>
+                <li><a class="Gêneros">Gêneros <span class="material-symbols-outlined">chevron_right</span></a>
+                    <ul class="GeneL">
+                        <li><a href="@">Poema</a></li>
+                        <li><a href="@">Poesia</a></li>
+                        <li><a href="@">Conto</a></li>
+                        <li><a href="@">Outros</a></li>
+                    </ul>
+                </li>
+                <li><a href="@">Sobre</a></li>
+            </ul>
+            </div>
+            <div>
+                <button id="hamburguer"><span class="material-symbols-outlined">density_medium</span></button>          
+                <a href=""><img id="logo" src="/static/IMG/image 1.png" alt=""></a>
+                <h1>Vozes do Oeste Potiguar</h1>
+            </div>
+            <div id="linhaverdefina" class="small-screen"></div>
+            <div>              
+                <div class="search-box">
+                    <input type="text" class="search-text" placeholder="Pesquise aqui">
+                    <a class="search-btn">
+                        <img class="lupa-green" src="/static/IMG/icons8-pesquisar-64.png" alt="">
+                    </a>
+                </div>
+                <a href="{% url 'paginadelogin' %}"><img id="perfil" src="/static/IMG/icons8-conta-de-teste-60.png" alt=""></a>
+            </div> 
+        </nav>
+        <div id="linhaverdefina"></div>         
+    </header>
+
+   
+        {% block content %}
+
+        {% endblock %}
+    
+
+    <footer>
+        <div class="rodape">
+            <div class="redessociais">
+                <a href=""><img src="/stattic/IMG/Twitter.png" alt=""></a>
+                <a href=""><img src="/static/IMG/Gmail Logo.png" alt=""></a>
+                <a href=""><img src="/static/IMG/Instagram.png" alt=""></a>
+            </div>
+            <div class="sobreetermo">
+                <a href="">Sobre</a>
+                <a href="">Termos de uso</a>
+            </div>
+            <a href="" id="politica">Politica e privacidade</a>
+    
+            <div class="Copyright">
+                <a href=""><img src="/static/IMG/Copyright.png" alt=""></a>
+                <a href=""></a>2023 Vozes do Oeste Potiguar</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/js/javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

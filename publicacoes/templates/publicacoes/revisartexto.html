@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'CSS/estilorevisartexto.css' %}">
+    <main>
+        <section>
+            <div class="BusqueporGenerocidade">Revisão e publicação do texto</div>
+            <div class="alinhardatasinfor">
+                <div class="informações">           
+                    <h2>Casa coruja</h2>
+                    <p>Romance - AL</p>
+                </div>
+                <div id="datasdepublicação">
+                    <p id="datas">Enviado em 18 set 2023, 11h35</p>
+                    <p id="datas">Por Eda Clawthorne — Taboleiro Grande</p>
+                </div>
+
+            </div>
+            <div id="linha"></div>
+        </section>
+        <div class="textodoautor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quae sint quidem quisquam nihil quis modi magni nemo, culpa iure mollitia. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nam vitae, quia fuga doloremque, quod sit culpa soluta blanditiis aliquid nostrum enim, non expedita magni sint accusamus sed.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae magni quibusdam, ea voluptatem incidunt voluptatibus cupidit
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptatum fugit sint delectus ab, dignissimos quidem labore a consectetur harum libero incidunt quibusdam accusantium officiis necessitatibus nulla provident, aspernatur dolorem?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque eveniet similique sunt excepturi architecto non voluptatem! Perferendis eveniet porro temporibus provident dolorem est, quam odit, voluptatum ipsum, voluptatibus illum sapiente.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos alias officiis sint possimus non consequatur mollitia nesciunt nostrum. Eum perspiciatis reprehenderit hic nostrum eveniet numquam delectus tempore velit excepturi unde?
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, necessitatibus nemo quas veritatis, excepturi dolores officia soluta quaerat sunt nesciunt ducimus facilis unde provident enim doloremque culpa laudantium? Nemo, tenetur?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio sed in perferendis iure voluptas inventore nemo fuga impedit incidunt facere! Excepturi, id numquam. Accusamus aliquid, repellendus sint aliquam corporis molestias?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quisquam delectus atque illo praesentium quaerat ullam, consequatur ad tenetur ipsam cum nulla vitae quasi nihil facilis quis eos eligendi voluptatem!loginlo
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate porro minus officia ea at ut deserunt provident quo, impedit explicabo! Dicta a doloremque ratione tenetur animi quisquam sequi.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repellat voluptas doloremque, obcaecati ab, fuga molestias praesentium expedita vitae ex est in reprehenderit. Quia ipsum rerum cum voluptatibus omnis consectetur.
+            <div id="linhabaixo"></div>
+        </div>
+        <form>
+            <div>
+              <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter" />
+              <label for="subscribeNews"> Texto já foi revisado </label>
+            </div>
+            <a href="/exibir-texto">
+                <div id="butplublicar"><button type="button">Publicar</button></div>
+            </a>
+        </form>
+        <div id="Devolver">
+            <p>Motivo do texto ser devolvido</p>
+            <a href="/texto-devolvido">
+                <button>Devolver</button>
+            </a>
+        </div>
+        <div id="caixadetexto"><textarea name="caixadetexto" id="cai" cols="30" rows="10"></textarea></div> 
+    </main>
+        
+{% endblock %}   

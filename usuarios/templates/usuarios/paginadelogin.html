@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de login</title>
+    <link rel="stylesheet" href="/static/CSS/estilologin.css">
+</head>
+<body>
+    <div class="cabeçalhodelogin">
+            <a href=""><img src="/static/IMG/Group 6.png" alt=""></a>
+            <h1>Vozes do Oeste Potiguar</h1>
+            <p>Faça seu login e aproveite!</p>
+        <form method="post"  action="#">
+            <div class="alinharinput">                
+                <label for="">Endereço de e-mail</label>
+                <input  name="email" type="text" class="estiloemail" placeholder="vozesdooestepotiguar@exemplo.com" required>
+                <label for="">Senha</label>
+                <div class="input"><input name="senha" type="password" placeholder="********"></div>
+            </div>
+            <button>Entrar</button>
+            
+        </form>
+        <div id="esquecadras">
+            <a href=""><P>Esqueceu sua senha?</P></a>
+            <a href="{% url 'cadastro' %}"><p>Não possui conta? Cadastre-se!</p></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'CSS/autor.css' %}">
+    <main>
+        <div id="img">
+            <div id="perfil">
+                    <img id="photo"  src="/static/IMG/Ellipse 22.png" alt="">
+                <div id="principal">
+                    <ul class="pag_autor">
+                        <li id="nome">Eda Clawthorne</li>
+                        <li id="user">@eda_clawthorne</li>
+                        <li id="obra_principal">Nome da obra</li>
+                    </ul>
+                    <button><img src="static/IMG/UserPlus.png" alt="">SEGUIR</button>
+                </div>
+                <ul id="infos">
+                    <li><p class="number">01</p><a href="">Obras</a></li>
+                    <li><p class="number">02</p><a href="">Seguidores</a></li>
+                    <li><p class="number">03</p><a href="">Curtidas</a></li>
+                    <li><p class="number">04</p><a href="">Seguindo</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="baixo">
+            <ul id="sobrecurtidos">
+                <li>Sobre</li>
+                <li>Curtidos</li>
+            </ul>
+            <div class="linhaverdefina"></div>
+        </div>
+        <div id="englobar">
+            <section id="obras">
+                <div class="alinharperfileinformações">
+                    <div class="perfil">
+                        <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
+                            <div class="nome_genero">
+                                <h2>O pequeno príncipe</h2>
+                                <p>Gênero</p>
+                            </div>
+                    </div>
+                    <div class="informações">
+                        <p id="qnt_curtidas">4 curtidas</p>
+                        <p>L</p>
+                    </div>
+                </div>
+                <div class="alinharperfileinformações">
+                    <div class="perfil">
+                        <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
+                            <div class="nome_genero">
+                                <h2>O pequeno príncipe</h2>
+                                <p>Gênero</p>
+                            </div>
+                    </div>
+                    <div class="informações">
+                        <p id="qnt_curtidas">4 curtidas</p>
+                        <p>L</p>
+                    </div>
+                </div>
+            </section>
+            <div class="sobre_o_autor">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna tellus vitae, euismod neque. Nulla facilisi. Phasellus ultricies dignissim nibh ut cursus. Nam et quam sit amet turpis finibus maximus tempor eget augue. Aenean at ultricies lorem. Sed egestas ligula tortor, sit amet mattis ex feugiat non. Duis purus diam, dictum et ante at, commodo iaculis urna.</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}    

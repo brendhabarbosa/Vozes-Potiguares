@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postagem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/CSS/postagem.css">
+</head>
+<header>
+    <nav >
+        <div class="Menu">
+            <div class="Titulodomenu">Menu<span id="fechar" class="material-symbols-outlined">close</span></div>
+        <ul>
+            <li><a href="@">Tela Principal</a></li>
+            <li><a href="@">Perfil</a></li>
+            <li><a class="Cidades">Cidades<span class="material-symbols-outlined">chevron_right</span></a>
+                <ul class="CddO">
+                    <li><a href="@">Água nova</a></li>
+                    <li><a href="@">Alexandria</a></li>
+                    <li><a href="@">Álmino Afonso</a></li>
+                    <li><a href="@">Antônio Martins</a></li>
+                    <li><a href="@">Coronel João Pessoa</a></li>
+                    <li><a href="@">Doutor Severiano</a></li>
+                    <li><a href="@">Encanto</a></li>
+                    <li><a href="@">Francisco Dantas</a></li>
+                    <li><a href="">Frutuoso Gomes</a></li>
+                    <li><a href="">João Dias</a></li>
+                    <li><a href="">José da Penha</a></li>
+                    <li><a href="">Luís Gomes</a></li>
+                    <li><a href="">Lucrécia</a></li>
+                    <li><a href="">Major Sales</a></li>
+                    <li><a href="">Marcelino Vieira</a></li>
+                    <li><a href="">Martins</a></li>
+                    <li><a href="">Pau dos Ferros</a></li>
+                    <li><a href="">Paraná</a></li>
+                    <li><a href="">Pilões</a></li>
+                    <li><a href="">Portalegre</a></li>
+                    <li><a href="">Rafael Fernandes</a></li>
+                    <li><a href="">Riacho da Cruz</a></li>
+                    <li><a href="">Riacho de Santana</a></li>
+                    <li><a href="">São Francisco do Oeste</a></li>
+                    <li><a href="">São Miguel</a></li>
+                    <li><a href="">Serrinha dos Pintos</a></li>
+                    <li><a href="">Tenente Ananias</a></li>
+                    <li><a href="">Taboleiro Grande</a></li>
+                    <li><a href="">Venha-ver</a></li>
+                    <li><a href="">Viçosa</a></li>
+                </ul>
+            </li>
+            <li><a class="Gêneros">Gêneros <span class="material-symbols-outlined">chevron_right</span></a>
+                <ul class="GeneL">
+                    <li><a href="@">Poema</a></li>
+                    <li><a href="@">Poesia</a></li>
+                    <li><a href="@">Conto</a></li>
+                    <li><a href="@">Outros</a></li>
+                </ul>
+            </li>
+            <li><a href="@">Sobre</a></li>
+        </ul>
+        </div>
+        <div id="linhaverdefina" class="small-screen"></div>
+        <div>
+            <button id="hamburguer"><span class="material-symbols-outlined">density_medium</span></button>          
+            <a href="/"><img id="logo" src="/static/img/image 1.png" alt=""></a>
+            <h1>Detalhes da escrita</h1>
+        </div>
+        <div>
+            <div id="botões">
+                <a href="/revisar-texto">
+                    <button id="enviar">Enviar</button>
+                </a>
+                <button id="voltar">Voltar</button>
+            </div>  
+        </div>      
+    </nav>
+    <div class="linhaverdefina"></div>
+</header>
+<body>
+    <main>
+        <div id="centralizar">
+            <div class="aviso">
+                <p>ATENÇÃO!</p>
+                <p>Todas os textos antes de serem publicados serão enviadas para o e-mail do site para serem analisados, caso seja encontrado algo imprópio ou pejorativo, a publicação não será realizada.</p>
+                <p>Em caso de dúvidas ou mais informações, entre em contato com: vozes.oestepotiguar@gmail.com </p>  
+            </div>
+            <form action="get">
+                <div class="alinhar">
+                    <label for="title">Título:</label>
+                    <input type="text" required name="title" class="forms" placeholder="História sem título">
+                </div>
+                <div class="flex-form">
+                    <div class="alinhar">
+                        <label for="gener" >Gênero:</label>
+                        <select name="" class="forms">
+                            <option value="" disabled selected>Selecione o gênero</option>
+                            <option value="text">Poema</option>
+                            <option value="text">Contos</option>
+                            <option value="text">Crônicas</option>
+                            <option value="text">Outros</option>
+                        </select>
+                    </div>
+                    <div class="alinhar">
+                        <label for="classification">Classificação</label>
+                        <select name="" class="forms">
+                            <option value="" disabled selected>Selecione a classificação</option>
+                            <option value="text">L</option>
+                            <option value="text">10</option>
+                            <option value="text">12</option>
+                            <option value="text">14</option>
+                            <option value="text">16</option>
+                            <option value="text">18</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="alinhar">
+                    <label for="text">Escreva aqui:</label>
+                    <textarea id="" cols="30" rows="20"></textarea>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="/JS/javascript.js"></script>
+</body>
+</html>
