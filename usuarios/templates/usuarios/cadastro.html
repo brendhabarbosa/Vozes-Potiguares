@@ -9,7 +9,7 @@
 <header>
     <nav>
         <a href=""><img src="/static/IMG/image 1.png" alt=""></a>
-        <h1>Vozes do Oeste Potiguar</h1>
+        <h1>Vozes Potiguares</h1>
     </nav>
     <div id="linhaverdefina"></div>
 </header>
@@ -17,78 +17,47 @@
     <main>
         <div class="formulariodecadastro">
             <form method="post" action="#">
+                {% csrf_token %}
                 <div class="tituloesubtitulo">
                     <h2>Crie seu cadastro!</h2>
                     <P>Tenha acesso a diversos textos e públique de forma fácil</P>
                 </div>
                 <div>
                     <label for="">Nome completo</label>
-                    <input name="nome" type="text" class="estilouser"  >
+                        {{form.nome_completo}}
                 </div>
 
                 <div>
                     <label for="">Usuário</label>
-                    <input name="usuario" type="text" class="estilouser"  >
+                        {{form.username}}
                 </div>
 
                 <div>
                     <label for="">Data de nascimento</label>
-                    <input name="datanascimento" type="date">
+                        {{form.data_nascimento}}
                 
                 </div>
 
                 <div>  
                     <label for="">Cidade</label>
-                    <select name="cidade" id="estilocidade" placeholder=" uuuuuuuu" >
-                        <option value=""></option>
-                        <option value="">Água Nova</option>
-                        <option value="">Alexandria</option>
-                        <option value="">Almino Afonso</option>
-                        <option value="">Antônio Martins</option>
-                        <option value="">Coronel João Pessoa</option>
-                        <option value="">Doutor Severiano</option>
-                        <option value="">Encanto</option>
-                        <option value="">Francisco Dantas</option>
-                        <option value="">Frutuoso Gomes</option>
-                        <option value="">João Dias</option>
-                        <option value="">José da Penha</option>
-                        <option value="">Luís Gomes</option>
-                        <option value="">Lucrécia</option>
-                        <option value="">Major Sales</option>
-                        <option value="">Marcelino Vieira</option>
-                        <option value="">Martins</option>
-                        <option value="">Pau dos Ferros</option>
-                        <option value="">Paraná</option>
-                        <option value="">Pilões</option>
-                        <option value="">Portalegre</option>
-                        <option value="">Rafael Fernandes</option>
-                        <option value="">Riacho da Cruz</option>
-                        <option value="">Riacho de Santana</option>
-                        <option value="">São Francisco do Oeste</option>
-                        <option value="">São Miguel</option>
-                        <option value="">Serrinha dos Pintos</option>
-                        <option value="">Tenente Ananias</option>
-                        <option value="">Taboleiro Grande</option>
-                        <option value="">Venha-ver</option>
-                        <option value="">Viçosa</option>
-                    </select>  
+                        {{form.cidade}}
 
                 </div>
                 
                 <div>
                     <label for="">Endereço de e-mail</label>
-                    <input name="email" type="text" class="estiloemail" placeholder="vozesdooestepotiguar@exemplo.com" required>
+                        {{form.email}}
                 </div>
 
                 <div>
                     <label for="">Sua senha</label>
-                    <input name="senha" type="password" class="input" placeholder="********">
+                    {{form.senha}}
                 </div>
                 <div>
                     <label for="">Confirme sua senha</label>
-                    <input type="password" class="input" placeholder="********">
+                    {{form.senha}}
                 </div>
-                <a href="{% url 'index' %}"><button>Cadastre-se</button></a>
+                <a href="{% url 'paginadelogin' %}"><button>Cadastre-se</button></a>
             </form>
         </div>
     </main>

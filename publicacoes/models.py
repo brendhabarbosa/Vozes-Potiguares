@@ -6,6 +6,8 @@ class Classificação_indicativa(models.Model):
 
 class Genero(models.Model):
     nome = models.CharField(max_length=100, blank=False) 
+    def __str__(self):
+        return self.nome
 
 class Texto(models.Model):
     autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
@@ -15,6 +17,8 @@ class Texto(models.Model):
     conteudo = models.TextField(blank=False)
     data_de_publicacao = models.DateField(blank=False)
     publicacao = models.BooleanField(default=False)
+    def __str__(self):
+        return self.titulo
 
 class Revisão(models.Model):
     texto = models.ForeignKey(Texto, on_delete=models.CASCADE, blank=False)

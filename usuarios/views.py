@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from usuarios.forms import UsuarioForm
 # Create your views here.
 def index(request):
     return render(request, 'usuarios/index.html')
@@ -8,7 +8,13 @@ def autor(request):
     return render(request, 'usuarios/autor.html')
 
 def cadastro(request):
-    return render(request, 'usuarios/cadastro.html')
+    form = UsuarioForm()
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+             form.save()
+             return redirect('paginadelogin')
+    return render(request, 'usuarios/cadastro.html', {'form': form})
 
 def paginadelogin(request):
     return render(request, 'usuarios/paginadelogin.html')

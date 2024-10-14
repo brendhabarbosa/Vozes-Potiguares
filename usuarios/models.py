@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class Cidade(models.Model):
@@ -7,11 +6,11 @@ class Cidade(models.Model):
     brasao = models.ImageField(upload_to="cidades/")
 
 class Usuario(models.Model):
-    nome_completo = models.CharField(max_length=100, blank=False)
-    username = models.CharField(max_length=50, blank=False)
+    nome_completo = models.CharField(max_length=100, blank=False, unique=True)
+    username = models.CharField(max_length=50, blank=False, unique=True)
     data_nascimento = models.DateField(blank=False)
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)
-    email = models.EmailField(blank=False)
+    email = models.EmailField(blank=False, unique=True)
     senha = models.CharField(max_length=50, blank=False)
     sobre = models.TextField(blank=False)
     avatar = models.ImageField(upload_to="usuarios/") 
