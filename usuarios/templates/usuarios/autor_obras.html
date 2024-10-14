@@ -3,13 +3,14 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'CSS/autor.css' %}">
+<script src="{% static 'js/obras.js' %}"></script>
 {% endblock %}
 
 {% block content %}
     <main>
         <div id="img">
             <div id="perfil">
-                    <img id="photo"  src="/static/IMG/Ellipse 22.png" alt="">
+                <img id="photo"  src="/static/IMG/Ellipse 22.png" alt="">
                 <div id="principal">
                     <ul class="pag_autor">
                         <li id="nome">Eda Clawthorne</li>
@@ -34,7 +35,31 @@
             <div id="linhaverdefina"></div>
         </div>
         <div id="englobar">
-            {% comment %} <section id="obras">
+            <section id="obras">
+                <div class="alinharperfileinformações">
+                    <div class="perfil">
+                        <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
+                        <div class="nome_genero">
+                            <h2>O pequeno príncipe</h2>
+                            <div>
+                                <p>Gênero</p>
+                                <p>L</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="informações">
+                        <button class="acao-obras" onclick="abrirObraMenu(1)"><span class="material-symbols-outlined">more_vert</span></button>
+                        <p id="qnt_curtidas">4 curtidas</p>
+                        <div class="menu-obras" id="menu-obras-1">
+                            <div class="Titulodomenu"><span onclick="abrirObraMenu(1)" id="fechar" class="material-symbols-outlined">close</span></div>
+                            <ul>
+                                <li><a href="@">Editar</a></li>
+                                <li><a href="@">Excluir</a></li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+
                 <div class="alinharperfileinformações">
                     <div class="perfil">
                         <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
@@ -48,23 +73,7 @@
                         <p>L</p>
                     </div>
                 </div>
-                <div class="alinharperfileinformações">
-                    <div class="perfil">
-                        <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
-                            <div class="nome_genero">
-                                <h2>O pequeno príncipe</h2>
-                                <p>Gênero</p>
-                            </div>
-                    </div>
-                    <div class="informações">
-                        <p id="qnt_curtidas">4 curtidas</p>
-                        <p>L</p>
-                    </div>
-                </div>
-            </section> {% endcomment %}
-            <div class="sobre_o_autor">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna tellus vitae, euismod neque. Nulla facilisi. Phasellus ultricies dignissim nibh ut cursus. Nam et quam sit amet turpis finibus maximus tempor eget augue. Aenean at ultricies lorem. Sed egestas ligula tortor, sit amet mattis ex feugiat non. Duis purus diam, dictum et ante at, commodo iaculis urna.</p>
-            </div>
+            </section>
         </div>
     </main>
 {% endblock %}    

@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+    {% block head %}
+    {% endblock %}
 </head>
 <body>
     <header>
@@ -19,36 +21,9 @@
                 <li><a href="@">Perfil</a></li>
                 <li><a class="Cidades">Cidades<span class="material-symbols-outlined">chevron_right</span></a>
                     <ul class="CddO">
-                        <li><a href="@">Água nova</a></li>
-                        <li><a href="@">Alexandria</a></li>
-                        <li><a href="@">Álmino Afonso</a></li>
-                        <li><a href="@">Antônio Martins</a></li>
-                        <li><a href="@">Coronel João Pessoa</a></li>
-                        <li><a href="@">Doutor Severiano</a></li>
-                        <li><a href="@">Encanto</a></li>
-                        <li><a href="@">Francisco Dantas</a></li>
-                        <li><a href="">Frutuoso Gomes</a></li>
-                        <li><a href="">João Dias</a></li>
-                        <li><a href="">José da Penha</a></li>
-                        <li><a href="">Luís Gomes</a></li>
-                        <li><a href="">Lucrécia</a></li>
-                        <li><a href="">Major Sales</a></li>
-                        <li><a href="">Marcelino Vieira</a></li>
-                        <li><a href="">Martins</a></li>
-                        <li><a href="">Pau dos Ferros</a></li>
-                        <li><a href="">Paraná</a></li>
-                        <li><a href="">Pilões</a></li>
-                        <li><a href="">Portalegre</a></li>
-                        <li><a href="">Rafael Fernandes</a></li>
-                        <li><a href="">Riacho da Cruz</a></li>
-                        <li><a href="">Riacho de Santana</a></li>
-                        <li><a href="">São Francisco do Oeste</a></li>
-                        <li><a href="">São Miguel</a></li>
-                        <li><a href="">Serrinha dos Pintos</a></li>
-                        <li><a href="">Tenente Ananias</a></li>
-                        <li><a href="">Taboleiro Grande</a></li>
-                        <li><a href="">Venha-ver</a></li>
-                        <li><a href="">Viçosa</a></li>
+                        {% for cidade in cidades %}
+                        <li><a href="@">{{cidade.nome}}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
                 <li><a class="Gêneros">Gêneros <span class="material-symbols-outlined">chevron_right</span></a>
@@ -75,7 +50,7 @@
                         <img class="lupa-green" src="/static/IMG/icons8-pesquisar-64.png" alt="">
                     </a>
                 </div>
-                <a href="{% url 'paginadelogin' %}"><img id="perfil" src="/static/IMG/icons8-conta-de-teste-60.png" alt=""></a>
+                <a href="{% url 'paginadelogin' %}"><img id="perfil-avatar" src="/static/IMG/icons8-conta-de-teste-60.png" alt=""></a>
             </div> 
         </nav>
         <div id="linhaverdefina"></div>         

@@ -47,6 +47,18 @@
     margin-right: 10px;
     box-sizing: border-box;
 }
+
+#obras h2 {
+  font-weight: 700;
+}
+
+.acao-obras {
+  margin: 0;
+  background: none;
+  border: none;
+  align-self: flex-end;
+}
+
 .alinharperfileinformações{
     display: flex;
     max-width: 1200px;
@@ -60,6 +72,16 @@
     align-items: center;
     gap: 64px;  
 }
+.informações {  
+  position: relative;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .informações > p{
     color: #014040;
     font-size: 20px;
@@ -95,50 +117,63 @@ button{
     gap: 10px;
 }
 #img{
-    background: url('static/IMG/Rectangle\ 51.png') center center;
+    background: url('/static/IMG/Rectangle\ 51.png') center center;
     max-width: 1250px;
     height: 480px;
-    margin: auto;
+    margin: 50px auto;
     padding: 20px;
-    margin-bottom: 50px;
 }
 #sobrecurtidos{
     display: flex;
     flex-direction: row;
     gap: 24px;
+
+    color: #014040;
+    font-size: 24px;
+    font-weight: 700;
 }
 .nome_genero > h2{
     font-size: 32px;
     color: #014040;
 
 }
-.nome_genero > p{
+
+.nome_genero div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nome_genero p{
     font-size: 24px;
     color: #014040;
     font-weight: 700
 
 }
 .sobre_o_autor{
-    width: 297px;
-    height: 649px;
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    border: 1px solid black;
+    box-shadow: 0 4px 4px rgb(0, 0, 0, 0.25);
     flex-shrink: 0;
     background-color: #9bb6a696;
-    margin-left: 10px;
     margin-top: 20px;
 
 }
 .sobre_o_autor p{
     text-align: justify;
-    margin-left: 40px;
-    margin-right: 40px;
+    /* margin-left: 40px;
+    margin-right: 40px; */
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #014040;             
     }
 #englobar{
-    display: grid;
+    margin: auto;
+    max-width: 1250px;
+    /* display: grid;
     grid-template-columns: 1fr 297px;
+    gap: 10px; */
     align-items: flex-start;
     justify-content: center;
 }
@@ -148,10 +183,42 @@ button{
     flex-direction: column;
 }
 #baixo{
+    max-width: 1290px;
+    margin: auto;
+
     display: flex;
     flex-direction: column;
 }
 
+li {
+  list-style: none;
+}
+
+.menu-obras {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 100px;  
+  background-color: #9bb6a6;
+  border: 1px solid;
+  border-radius: 4px;
+
+  display: none;
+}
+
+.menu-obras ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.menu-obras a {
+  text-decoration: none;
+  color: #014040;
+  font-weight: 700;
+}
 
 @media (max-width: 1024px) {
   header nav {
@@ -169,16 +236,6 @@ button{
     grid-column-end: 3;
     justify-content: space-between;
     flex-direction: row-reverse;
-  }
-
-
-
-  #linhaverdefina:not(.small-screen) {
-    display: none;
-  }
-
-  #linhaverdefina.small-screen {
-    display: block;
   }
 
   .informações {
@@ -219,7 +276,6 @@ button{
   } 
 
   div.sobre_o_autor {
-    width: 100%;
     margin: 0;
   }
 }

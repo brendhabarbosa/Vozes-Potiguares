@@ -7,6 +7,9 @@ def index(request):
 def autor(request):
     return render(request, 'usuarios/autor.html')
 
+def autor_obras(request):
+    return render(request, 'usuarios/autor_obras.html')
+
 def cadastro(request):
     form = UsuarioForm()
     if request.method == 'POST':

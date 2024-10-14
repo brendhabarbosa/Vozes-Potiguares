@@ -2,6 +2,7 @@
     margin: 0%;
     font-family: sans-serif;
     padding: 0;
+    box-sizing: border-box;
   }
   body{
     background-color: #F1F1F1;
@@ -145,7 +146,7 @@
   }
   
   
-  #perfil{
+  #perfil-avatar{
     width: 60px;
     height: 60px;
   }

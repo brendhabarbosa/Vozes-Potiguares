@@ -28,3 +28,7 @@ class Revisão(models.Model):
 
     def __str__(self):
         return self.texto
+    
+class Curtidas(models.Model):
+    texto = models.ForeignKey(Texto, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
