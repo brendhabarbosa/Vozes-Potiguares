@@ -23,5 +23,6 @@ urlpatterns = [
     path('autor/',autor, name='autor'),
     path('cadastro/', cadastro, name='cadastro'),
     path('paginadelogin/', paginadelogin, name='paginadelogin'),
-    path('autor/obras', autor_obras, name='autor_obras')
+    path('autor/obras', autor_obras, name='autor_obras'),
+    path('sair', sair, name='sair')
 ]

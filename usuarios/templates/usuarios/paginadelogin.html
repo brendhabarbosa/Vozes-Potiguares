@@ -12,11 +12,12 @@
             <h1>Vozes Potiguares</h1>
             <p>Faça seu login e aproveite!</p>
         <form method="post"  action="#">
-            <div class="alinharinput">                
+            <div class="alinharinput"> 
+                {% csrf_token %}              
                 <label for="">Endereço de e-mail</label>
-                <input  name="email" type="text" class="estiloemail" placeholder="vozesdooestepotiguar@exemplo.com" required>
+                <input  name="username" type="text" class="estiloemail" placeholder="vozesdooestepotiguar@exemplo.com" required>
                 <label for="">Senha</label>
-                <div class="input"><input name="senha" type="password" placeholder="********"></div>
+                <div class="input"><input name="password" type="password" placeholder="********"></div>
             </div>
             <button>Entrar</button>
             

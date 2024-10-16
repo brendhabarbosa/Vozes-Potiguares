@@ -40,7 +40,7 @@
             <div>
                 <button id="hamburguer"><span class="material-symbols-outlined">density_medium</span></button>          
                 <a href=""><img id="logo" src="/static/IMG/image 1.png" alt=""></a>
-                <h1>Vozes do Oeste Potiguar</h1>
+                <h1>Vozes Potiguares</h1>
             </div>
             <div id="linhaverdefina" class="small-screen"></div>
             <div>              
@@ -50,7 +50,12 @@
                         <img class="lupa-green" src="/static/IMG/icons8-pesquisar-64.png" alt="">
                     </a>
                 </div>
-                <a href="{% url 'paginadelogin' %}"><img id="perfil-avatar" src="/static/IMG/icons8-conta-de-teste-60.png" alt=""></a>
+                {% if usuario.is_authenticated %}
+                    <a href="{% url 'autor' %}"><img id="perfil-avatar" src="{{avatar}}" alt=""></a>
+                {% else %}
+                    <a href="{% url 'paginadelogin' %}"><img id="perfil-avatar" src="/static/IMG/icons8-conta-de-teste-60.png" alt=""></a>
+                    <p>usuario não logado</p>
+                {% endif %}
             </div> 
         </nav>
         <div id="linhaverdefina"></div>         
@@ -77,7 +82,7 @@
     
             <div class="Copyright">
                 <a href=""><img src="/static/IMG/Copyright.png" alt=""></a>
-                <a href=""></a>2023 Vozes do Oeste Potiguar</a>
+                <a href=""></a>2023 Vozes Potiguares</a>
             </div>
         </div>
     </footer>

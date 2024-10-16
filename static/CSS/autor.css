@@ -95,6 +95,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 16px;
 }
 
 .number{
@@ -181,6 +182,13 @@ button{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 16px;
+}
+#photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 100%;
 }
 #baixo{
     max-width: 1290px;
@@ -192,8 +200,15 @@ button{
 
 li {
   list-style: none;
+ 
 }
 
+li > a{
+  color: #014040;
+  text-decoration: none;
+  font-weight: 700;
+
+}
 .menu-obras {
   position: absolute;
   right: 0;

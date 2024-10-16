@@ -17,7 +17,7 @@
                         <li id="user">@eda_clawthorne</li>
                         <li id="obra_principal">Nome da obra</li>
                     </ul>
-                    <button><img src="/static/IMG/UserPlus.png" alt="">SEGUIR</button>
+                    <button><img src="/static/IMG/UserPlus.png" alt="">EDITAR</button>
                 </div>
                 <ul id="infos">
                     <li><p class="number">01</p><a href="">Obras</a></li>
@@ -29,8 +29,8 @@
         </div>
         <div id="baixo">
             <ul id="sobrecurtidos">
-                <li>Sobre</li>
-                <li>Obras</li>
+                <li><a href="{% url 'autor' %}">Sobre</a></li>
+                <li><a href="{% url 'autor_obras' %}">Obras</a></li>
             </ul>
             <div id="linhaverdefina"></div>
         </div>

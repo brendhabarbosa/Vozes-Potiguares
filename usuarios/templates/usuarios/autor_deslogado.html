@@ -9,14 +9,14 @@
     <main>
         <div id="img">
             <div id="perfil">
-                    <img id="photo"  src="/media/{{user.avatar}}" alt="">
+                    <img id="photo"  src="/static/IMG/Ellipse 22.png" alt="">
                 <div id="principal">
                     <ul class="pag_autor">
-                        <li id="nome">{{user.nome_completo}}</li>
-                        <li id="user">@{{usuario.username}}</li>
-                        
+                        <li id="nome">Eda Clawthorne</li>
+                        <li id="user">@eda_clawthorne</li>
+                        <li id="obra_principal">Nome da obra</li>
                     </ul>
-                    <button><img src="/static/IMG/UserPlus.png" alt="">EDITAR</button>
+                    <button><img src="/static/IMG/UserPlus.png" alt="">SEGUIR</button>
                 </div>
                 <ul id="infos">
                     <li><p class="number">01</p><a href="">Obras</a></li>
@@ -28,8 +28,8 @@
         </div>
         <div id="baixo">
             <ul id="sobrecurtidos">
-                <li><a href="{% url 'autor' %}">Sobre</a></li>
-                <li><a href="{% url 'autor_obras' %}">Obras</a></li>
+                <li>Sobre</li>
+                <li>Obras</li>
             </ul>
             <div id="linhaverdefina"></div>
         </div>
