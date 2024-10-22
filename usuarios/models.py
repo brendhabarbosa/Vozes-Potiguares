@@ -32,7 +32,7 @@ class Usuario(AbstractUser):
     data_nascimento = models.DateField(blank=False, null=True)
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE, null=True)
     sobre = models.TextField(blank=False)
-    avatar = models.ImageField(upload_to="usuarios/") 
+    avatar = models.ImageField(upload_to="usuarios/", default='usuarios/default_avatar.png') 
     is_admin = models.BooleanField(default=False)
 
     objects = CustomManager()

@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,  get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from usuarios.forms import UsuarioForm
+from usuarios.forms import UsuarioForm, SobreForm
 from usuarios.models import Usuario
 from django.contrib.auth.decorators import login_required
 
@@ -12,8 +12,27 @@ def index(request):
 @login_required(login_url='/paginadelogin')
 def autor(request):
     usuario = Usuario.objects.get(username=request.user.username)
+    edicao = False
 
-    return render(request, 'usuarios/autor.html', context={ 'user': usuario })
+    return render(request, 'usuarios/autor.html', context={ 'edicao': edicao})
+
+def editar_perfil(request):
+    edicao = True 
+    usuario = Usuario.objects.get(id=request.user.id)
+    form = SobreForm(initial={'sobre': usuario.sobre})
+    if request.method == 'POST':
+        form = SobreForm(request.POST, request.FILES, instance=usuario)
+        print(form.errors)
+        if form.is_valid():
+            form.save()
+            return redirect('autor')
+    return render(request, 'usuarios/autor.html', context={ 'edicao': edicao, 'form': form })
+
+def excluir_sobre(request):
+    usuario = Usuario.objects.get(id=request.user.id)
+    usuario.sobre = '' 
+    usuario.save()
+    return redirect('autor')
 
 def autor_obras(request):
     return render(request, 'usuarios/autor_obras.html')

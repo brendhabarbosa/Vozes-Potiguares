@@ -15,3 +15,11 @@ class UsuarioForm(forms.ModelForm):
             'password': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '********'}),
         }
 
+class SobreForm(forms.ModelForm):
+    class Meta:
+        model = Usuario 
+        fields = ['sobre', 'avatar']
+        widgets = {
+            'sobre': forms.TextInput(attrs={'class': 'estilouser', 'placeholder': 'Digite sua biografia aqui'}),
+            'avatar': forms.FileInput()
+        }

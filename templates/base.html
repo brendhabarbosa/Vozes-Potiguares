@@ -18,7 +18,7 @@
                 <div class="Titulodomenu">Menu<span id="fechar" class="material-symbols-outlined">close</span></div>
             <ul>
                 <li><a href="@">Tela Principal</a></li>
-                <li><a href="@">Perfil</a></li>
+                <li><a href="{% url 'autor' %}">Perfil</a></li>
                 <li><a class="Cidades">Cidades<span class="material-symbols-outlined">chevron_right</span></a>
                     <ul class="CddO">
                         {% for cidade in cidades %}
@@ -51,7 +51,17 @@
                     </a>
                 </div>
                 {% if usuario.is_authenticated %}
-                    <a href="{% url 'autor' %}"><img id="perfil-avatar" src="{{avatar}}" alt=""></a>
+                    <div class="user-avatar-container">
+                        <img id="perfil-avatar" src="{{avatar}}" alt="">
+                        <p>></p>
+                        {% comment %} <div id="menu-avatar" class="Menu">
+                            <div class="Titulodomenu"><span id="avatar-fechar" class="material-symbols-outlined">close</span></div>
+                            <ul>
+                                <li><a href="">Sair</a></li>
+                                <li><a href="">Excluir Conta</a></li>
+                            </ul>
+                        </div> {% endcomment %}
+                    </div>
                 {% else %}
                     <a href="{% url 'paginadelogin' %}"><img id="perfil-avatar" src="/static/IMG/icons8-conta-de-teste-60.png" alt=""></a>
                     <p>usuario não logado</p>

@@ -133,6 +133,7 @@ button{
     font-size: 24px;
     font-weight: 700;
 }
+
 .nome_genero > h2{
     font-size: 32px;
     color: #014040;
@@ -160,6 +161,7 @@ button{
     margin-top: 20px;
 
 }
+
 .sobre_o_autor p{
     text-align: justify;
     /* margin-left: 40px;

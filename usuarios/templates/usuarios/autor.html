@@ -7,16 +7,24 @@
 
 {% block content %}
     <main>
+        <form enctype="multipart/form-data" class='estilouser' method="post" action="#">
+
         <div id="img">
             <div id="perfil">
-                    <img id="photo"  src="/media/{{user.avatar}}" alt="">
+                <img id="photo"  src="/media/{{user.avatar}}" alt="">
+                {% if edicao %}
+                    {{ form.avatar }}
+                {% endif %}
                 <div id="principal">
                     <ul class="pag_autor">
-                        <li id="nome">{{user.nome_completo}}</li>
-                        <li id="user">@{{usuario.username}}</li>
-                        
+                        <li id="nome">
+                            {{user.nome_completo}}
+                        </li>
+                        <li id="user">
+                            @{{usuario.username}}
+                        </li>
                     </ul>
-                    <button><img src="/static/IMG/UserPlus.png" alt="">EDITAR</button>
+                    <a href="{% url 'editar_perfil'%}"><button type="button">EDITAR</button><a/>
                 </div>
                 <ul id="infos">
                     <li><p class="number">01</p><a href="">Obras</a></li>
@@ -34,37 +42,21 @@
             <div id="linhaverdefina"></div>
         </div>
         <div id="englobar">
-            {% comment %} <section id="obras">
-                <div class="alinharperfileinformações">
-                    <div class="perfil">
-                        <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
-                            <div class="nome_genero">
-                                <h2>O pequeno príncipe</h2>
-                                <p>Gênero</p>
-                            </div>
-                    </div>
-                    <div class="informações">
-                        <p id="qnt_curtidas">4 curtidas</p>
-                        <p>L</p>
-                    </div>
-                </div>
-                <div class="alinharperfileinformações">
-                    <div class="perfil">
-                        <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
-                            <div class="nome_genero">
-                                <h2>O pequeno príncipe</h2>
-                                <p>Gênero</p>
-                            </div>
-                    </div>
-                    <div class="informações">
-                        <p id="qnt_curtidas">4 curtidas</p>
-                        <p>L</p>
-                    </div>
-                </div>
-            </section> {% endcomment %}
             <div class="sobre_o_autor">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna tellus vitae, euismod neque. Nulla facilisi. Phasellus ultricies dignissim nibh ut cursus. Nam et quam sit amet turpis finibus maximus tempor eget augue. Aenean at ultricies lorem. Sed egestas ligula tortor, sit amet mattis ex feugiat non. Duis purus diam, dictum et ante at, commodo iaculis urna.</p>
+                {% if edicao %}
+                        {% csrf_token %}
+                        {{form.sobre}}
+                        <button type='submit'>Postar</button>
+                        <a href="{%url 'excluir_sobre'%}"><button type='button'>Excluir</button><a/>
+                    {% else %}
+                        {% if usuario.sobre != '' %}
+                        {{usuario.sobre}}
+                        {% else %}
+                        Este usuário não possui informações aqui.
+                        {% endif %}
+                    {% endif %}
             </div>
         </div>
+        <form/>
     </main>
 {% endblock %}    
