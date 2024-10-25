@@ -35,6 +35,10 @@
                     </ul>
                 </li>
                 <li><a href="@">Sobre</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'sair' %}">Sair</a></li>
+                    <li><a href="{% url 'excluir_perfil' usuario.id %}">Excluir Conta</a></li>
+                {% endif %}
             </ul>
             </div>
             <div>
@@ -52,19 +56,13 @@
                 </div>
                 {% if usuario.is_authenticated %}
                     <div class="user-avatar-container">
-                        <img id="perfil-avatar" src="{{avatar}}" alt="">
-                        <p>></p>
-                        {% comment %} <div id="menu-avatar" class="Menu">
-                            <div class="Titulodomenu"><span id="avatar-fechar" class="material-symbols-outlined">close</span></div>
-                            <ul>
-                                <li><a href="">Sair</a></li>
-                                <li><a href="">Excluir Conta</a></li>
-                            </ul>
-                        </div> {% endcomment %}
+                        <a href="{% url 'autor' %}">
+                            <img id="perfil-avatar" src="{{avatar}}" alt="">
+                        </a>
+                        <p></p>
                     </div>
                 {% else %}
                     <a href="{% url 'paginadelogin' %}"><img id="perfil-avatar" src="/static/IMG/icons8-conta-de-teste-60.png" alt=""></a>
-                    <p>usuario não logado</p>
                 {% endif %}
             </div> 
         </nav>

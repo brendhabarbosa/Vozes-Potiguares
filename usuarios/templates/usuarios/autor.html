@@ -24,7 +24,10 @@
                             @{{usuario.username}}
                         </li>
                     </ul>
-                    <a href="{% url 'editar_perfil'%}"><button type="button">EDITAR</button><a/>
+                    <div class="direcaodosbutoes"> 
+                        <a class="edit-link" href="{% url 'editar_perfil'%}"><button type="button">EDITAR</button><a/> 
+                        <a class="edit-link" href="{% url 'postagem'%}"><button type="button">Publicar</button><a/>
+                    </div>
                 </div>
                 <ul id="infos">
                     <li><p class="number">01</p><a href="">Obras</a></li>
@@ -46,8 +49,10 @@
                 {% if edicao %}
                         {% csrf_token %}
                         {{form.sobre}}
-                        <button type='submit'>Postar</button>
-                        <a href="{%url 'excluir_sobre'%}"><button type='button'>Excluir</button><a/>
+                        <div class="form-buttons">
+                            <button type='submit'>Salvar alterações</button>
+                            <a href="{%url 'excluir_sobre'%}"><button type='button'>Excluir</button><a/>
+                        </div>
                     {% else %}
                         {% if usuario.sobre != '' %}
                         {{usuario.sobre}}

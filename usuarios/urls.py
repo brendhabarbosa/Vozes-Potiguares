@@ -23,8 +23,10 @@ urlpatterns = [
     path('autor/',autor, name='autor'),
     path('editar_perfil/', editar_perfil, name='editar_perfil'),
     path('excluir_sobre/', excluir_sobre, name='excluir_sobre'),
+    path('excluir_perfil/<int:id>/',excluir_perfil,name='excluir_perfil'),
     path('cadastro/', cadastro, name='cadastro'),
     path('paginadelogin/', paginadelogin, name='paginadelogin'),
     path('autor/obras', autor_obras, name='autor_obras'),
-    path('sair', sair, name='sair')
+    path('sair', sair, name='sair'),
+    path('paginasobre/',paginasobre, name='paginasobre')
 ]

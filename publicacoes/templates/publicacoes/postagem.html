@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postagem</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="/static/CSS/postagem.css">
+    <link rel="stylesheet" href="{% static 'CSS/postagem.css' %}">
 </head>
 <header>
     <nav >
@@ -62,7 +63,7 @@
         <div id="linhaverdefina" class="small-screen"></div>
         <div>
             <button id="hamburguer"><span class="material-symbols-outlined">density_medium</span></button>          
-            <a href="/"><img id="logo" src="/static/img/image 1.png" alt=""></a>
+            <a href="/"><img id="logo" src="/image 1.png" alt=""></a>
             <h1>Detalhes da escrita</h1>
         </div>
         <div>
@@ -81,8 +82,10 @@
         <div id="centralizar">
             <div class="aviso">
                 <p>ATENÇÃO!</p>
-                <p>Todas os textos antes de serem publicados serão enviadas para o e-mail do site para serem analisados, caso seja encontrado algo imprópio ou pejorativo, a publicação não será realizada.</p>
-                <p>Em caso de dúvidas ou mais informações, entre em contato com: vozes.oestepotiguar@gmail.com </p>  
+                <p>Todas os textos antes de serem publicados serão enviadas para as administradoras do site para serem analisados.
+                    Caso for encontrado algo imprópio ou pejorativo, a publicação não será realizada.
+                </p>
+                <p>Em caso de dúvidas ou mais informações, entre em contato com: vozes.potiguares@gmail.com </p>  
             </div>
             <form action="get">
                 <div class="alinhar">
@@ -115,11 +118,13 @@
                 </div>
                 <div class="alinhar">
                     <label for="text">Escreva aqui:</label>
-                    <textarea id="" cols="30" rows="20"></textarea>
+                    <div id="editor"></div>
+                    
                 </div>
             </form>
         </div>
     </main>
-    <script src="/JS/javascript.js"></script>
+    <script src="/static/js/javascript.js"></script>  
+    <script src="/static/js/postagem.js"></script>
 </body>
 </html>

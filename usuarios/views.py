@@ -37,6 +37,9 @@ def excluir_sobre(request):
 def autor_obras(request):
     return render(request, 'usuarios/autor_obras.html')
 
+def paginasobre(request):
+    return render  (request, 'usuarios/paginasobre.html')
+
 def autor_deslogado(request):
     ...
 
@@ -71,3 +74,8 @@ def paginadelogin(request):
 def sair(request):
     logout(request)
     return redirect('index')
+
+def excluir_perfil(request,id):
+    usuario = Usuario.objects.get(id=id)
+    usuario.delete()
+    return redirect('autor')

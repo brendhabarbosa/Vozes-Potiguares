@@ -12,7 +12,7 @@ function exibirSubCategorias(e) {
  
  document.getElementsByClassName('Gêneros')[0].addEventListener('click', exibirSubCategorias)
 
- function mostrarMenu() {
+function mostrarMenu() {
     const menu = document.getElementsByClassName('Menu')[0]
 
     if (menu.style.display === 'block') {
@@ -20,8 +20,7 @@ function exibirSubCategorias(e) {
     } else {
        menu.style.display = 'block'
     }
- }
- 
- 
- document.getElementById('hamburguer').addEventListener('click', mostrarMenu)
- document.getElementById('fechar').addEventListener('click', mostrarMenu)
+}
+   
+   document.getElementById('hamburguer').addEventListener('click', mostrarMenu)
+   document.getElementById('fechar').addEventListener('click', mostrarMenu)

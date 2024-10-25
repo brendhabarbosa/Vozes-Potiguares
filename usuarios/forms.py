@@ -20,6 +20,6 @@ class SobreForm(forms.ModelForm):
         model = Usuario 
         fields = ['sobre', 'avatar']
         widgets = {
-            'sobre': forms.TextInput(attrs={'class': 'estilouser', 'placeholder': 'Digite sua biografia aqui'}),
+            'sobre': forms.Textarea(attrs={'class': 'sobre-input', 'placeholder': 'Digite sua biografia aqui'}),
             'avatar': forms.FileInput()
         }

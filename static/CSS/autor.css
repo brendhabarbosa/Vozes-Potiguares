@@ -72,6 +72,9 @@
     align-items: center;
     gap: 64px;  
 }
+.edit-link:hover {
+  text-decoration: none;
+}
 .informações {  
   position: relative;
   
@@ -90,7 +93,9 @@
 }
 #sobre_o_autor{
     color: #9BB6A6;
+    
 }
+
 #perfil{
     display: flex;
     flex-direction: column;
@@ -116,7 +121,14 @@ button{
     align-items: center;
     justify-content: center;
     gap: 10px;
+
+    cursor: pointer;
 }
+
+button:hover {
+  background-color: #e4e4e4
+}
+
 #img{
     background: url('/static/IMG/Rectangle\ 51.png') center center;
     max-width: 1250px;
@@ -235,6 +247,32 @@ li > a{
   text-decoration: none;
   color: #014040;
   font-weight: 700;
+}
+
+.sobre-input {
+  width: 100%;
+  resize: none;
+
+  background: none;
+  border: none;
+  outline: none;
+}
+.direcaodosbutoes{
+  display: flex;
+  gap: 12px;
+}
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.form-buttons button {
+  margin: 0;
+}
+
+.form-buttons a {
+  text-decoration: none;
 }
 
 @media (max-width: 1024px) {
