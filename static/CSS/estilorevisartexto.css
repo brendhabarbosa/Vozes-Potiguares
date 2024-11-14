@@ -312,25 +312,37 @@ h2{
 }
 form{
   display: flex ;
+  flex-direction: column;
   justify-content: space-around;
   margin-top: 32px;
   color: #014040;
-  gap: 230px;
+  /* gap: 230px; */
   font-weight: bold;
 }
 
-#butplublicar > button{
+#butplublicar {
+  width: min(900px, 100%);
+  margin: auto;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+#butplublicar  button{
   color: #014040;
   background-color: #F1F1F1;
-  margin-bottom: 20px;
-  
+
+  margin-top: 20px;
 }
 
 #Devolver{
+  width: min(100%, 900px);
+  margin: auto;
+  
   display: flex;
   color: #014040;
-  justify-content: space-around;
-  gap: 110px;
+  justify-content: space-between;
+  /* gap: 110px; */
   font-size: 20px;
   font-weight:bold;
   text-align: center;
@@ -450,7 +462,7 @@ footer{
 
 
 @media (max-width: 430px) {
-  #butplublicar > button{
+  #butplublicar button{
     margin-bottom: 8px;
     
   }

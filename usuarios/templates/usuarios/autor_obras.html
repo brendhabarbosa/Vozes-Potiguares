@@ -44,14 +44,15 @@
         </div>
         <div id="englobar">
             <section id="obras">
+                {% for obra in obras %}
                 <div class="alinharperfileinformações">
                     <div class="perfil">
-                        <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
+                        <img id="photo"  src="/media/{{user.avatar}}" alt="">
                         <div class="nome_genero">
-                            <h2>O pequeno príncipe</h2>
+                            <h2>{{ obra.titulo }}</h2>
                             <div>
-                                <p>Gênero</p>
-                                <p>L</p>
+                                <p>{{ obra.genero }}</p>
+                                <p>{{ obra.classificacao.idade }}</p>
                             </div>
                         </div>
                     </div>
@@ -67,20 +68,7 @@
                         </div> 
                     </div>
                 </div>
-
-                <div class="alinharperfileinformações">
-                    <div class="perfil">
-                        <a href=""><img src="/static/IMG/Ellipse 22.png" alt=""></a>
-                            <div class="nome_genero">
-                                <h2>O pequeno príncipe</h2>
-                                <p>Gênero</p>
-                            </div>
-                    </div>
-                    <div class="informações">
-                        <p id="qnt_curtidas">4 curtidas</p>
-                        <p>L</p>
-                    </div>
-                </div>
+                {% endfor %}
             </section>
         </div>
     </main>

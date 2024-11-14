@@ -27,7 +27,7 @@ class Revisão(models.Model):
     motivo_devolucao = models.TextField()
 
     def __str__(self):
-        return self.texto
+        return self.texto.titulo
     
 class Curtidas(models.Model):
     texto = models.ForeignKey(Texto, on_delete=models.CASCADE)

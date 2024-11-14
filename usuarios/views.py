@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from usuarios.forms import UsuarioForm, SobreForm
 from usuarios.models import Usuario
+from publicacoes.models import Texto
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -35,7 +36,19 @@ def excluir_sobre(request):
     return redirect('autor')
 
 def autor_obras(request):
-    return render(request, 'usuarios/autor_obras.html')
+    print(request.user.username)
+    usuario = Usuario.objects.get(username=request.user.username)
+    obras = Texto.objects.filter(autor=usuario)
+
+    print(request.user.pk)
+    print(usuario)
+    print(obras)
+
+    context = {
+        'obras': obras
+    }
+
+    return render(request, 'usuarios/autor_obras.html', context=context)
 
 def paginasobre(request):
     return render  (request, 'usuarios/paginasobre.html')

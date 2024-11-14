@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/listadetexto.css' %}">
+    <title>Textos Pendentes de Revisão</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Textos Pendentes de Revisão</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Prévia</th>
+                        <th>Data de Submissão</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for texto in textos %}
+                    <tr>
+                        <td class="font-medium">{{texto.titulo}}</td>
+                        <td style="width: 40%">{{texto.conteudo}}</td>
+                        <td>{{texto.data_de_publicacao}}</td>
+                        <td>
+                            <div class="actions">
+                                <a href="{% url 'revisartexto' texto.id %}">
+                                    <button class="button outline">Revisar</button>
+                                </a>
+                                <button class="button destructive">Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Funções JavaScript para manipular ações
+        const texts = [
+            { id: 1, status: 'pending' },
+            { id: 2, status: 'in_review' },
+            { id: 3, status: 'pending' },
+            { id: 4, status: 'reviewed' },
+            { id: 5, status: 'pending' },
+        ];
+
+        function handleReview(id) {
+            // Manipula a ação de revisão (exemplo; a implementação real pode variar)
+            alert(`Revisando texto com ID: ${id}`);
+        }
+
+        function handleDelete(id) {
+            // Manipula a ação de exclusão (exemplo; a implementação real pode variar)
+            alert(`Excluindo texto com ID: ${id}`);
+        }
+    </script>
+</body>
+</html>

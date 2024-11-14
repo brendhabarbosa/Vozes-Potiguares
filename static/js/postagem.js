@@ -14,3 +14,9 @@ const options = {
     theme: 'snow',
 };
 const editor = new Quill('#editor', options);
+
+const form = document.getElementById('post-form')
+
+form.addEventListener('formdata', e => {
+    e.formData.append('conteudo', JSON.stringify(editor.getContents().ops))
+})

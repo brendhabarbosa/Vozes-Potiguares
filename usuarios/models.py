@@ -28,12 +28,11 @@ class CustomManager(UserManager):
         return user
 
 class Usuario(AbstractUser):
-    nome_completo = models.CharField(max_length=100, blank=False, unique=True)
+    nome_completo = models.CharField(max_length=100, blank=False)
     data_nascimento = models.DateField(blank=False, null=True)
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE, null=True)
     sobre = models.TextField(blank=False)
     avatar = models.ImageField(upload_to="usuarios/", default='usuarios/default_avatar.png') 
-    is_admin = models.BooleanField(default=False)
 
     objects = CustomManager()
 
