@@ -4,6 +4,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from publicacoes.models import Texto, Revisão
 from usuarios.models import Usuario
 from datetime import date
+from django.core.paginator import Paginator
 # Create your views here.
 def exibirtexto(request):
     return render(request, 'publicacoes/exibirtexto.html')
@@ -53,14 +54,48 @@ def devolver_texto(request, texto_id):
 
     return redirect('analisar_texto')
 
+def lista_textos(request):
+    textos_lista = Texto.objects.all().order_by('titulo')
+    paginator = Paginator(textos_lista, 2)  
+    
+    page = request.GET.get('page', 1)
+    try:
+        textos = paginator.page(page)
+    except:
+        textos = paginator.page(1)
+    
+    return render(request, 'publicacoes/analisar_texto.html', {
+        'textos': textos
+    })
+
 def textosdevolvidos(request):
     return render(request, 'publicacoes/textosdevolvidos.html')
 
 def textosporcidade(request):
-    return render(request, 'publicacoes/textosporcidade.html')
+    obras_lista = Texto.objects.filter(publicacao=True)
+    page = 1
+
+    paginator = Paginator(obras_lista, 6)
+
+    try:
+        obras = paginator.get_page(page)
+    except:
+        obras = paginator.get_page(1)
+
+    return render(request, 'publicacoes/textosporcidade.html', { 'obras': obras })
 
 def textosporgenero(request):
-    return render(request, 'publicacoes/textosporgenero.html')
+    obras_lista = Texto.objects.filter(publicacao=True)
+    page = 1
+
+    paginator = Paginator(obras_lista, 6)
+
+    try:
+        obras = paginator.get_page(page)
+    except:
+        obras = paginator.get_page(1)
+
+    return render(request, 'publicacoes/textosporgenero.html', { 'obras': obras })
 
 @staff_member_required
 def analisar_texto(request):

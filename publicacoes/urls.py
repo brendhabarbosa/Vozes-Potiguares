@@ -25,7 +25,7 @@ urlpatterns = [
     path('textosdevolvidos', textosdevolvidos, name='textosdevolvidos'),
     path('textosporcidade/', textosporcidade, name='textosporcidade'),
     path('textosporgenero/', textosporgenero, name='textosporgenero'),
-    path('analisar_texto/', analisar_texto, name='analisar_texto'),
+    path('analisar_texto/', lista_textos, name='analisar_texto'),
     path('publicar_texto/<int:texto_id>/', publicar_texto, name='publicar_texto'),
     path('devolver_texto/<int:texto_id>/', devolver_texto, name='devolver_texto')
 

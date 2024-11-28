@@ -21,6 +21,8 @@ from usuarios.views import *
 urlpatterns = [
     path('', index, name='index'),
     path('autor/',autor, name='autor'),
+    path('autor/<int:autor_id>/', visitar_autor, name="visitar_autor"),
+    path('autor/<int:autor_id>/obras/', visitar_autor_obras, name="visitar_autor_obras"),
     path('editar_perfil/', editar_perfil, name='editar_perfil'),
     path('excluir_sobre/', excluir_sobre, name='excluir_sobre'),
     path('excluir_perfil/<int:id>/',excluir_perfil,name='excluir_perfil'),

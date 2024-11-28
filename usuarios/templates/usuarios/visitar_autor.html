@@ -11,10 +11,7 @@
 
         <div id="img">
             <div id="perfil">
-                <img id="photo"  src="/media/{{user.avatar}}" alt="">
-                {% if edicao %}
-                    {{ form.avatar }}
-                {% endif %}
+                <img id="photo"  src="/media/{{usuario.avatar}}" alt="">
                 <div id="principal">
                     <ul class="pag_autor">
                         <li id="nome">
@@ -24,10 +21,6 @@
                             @{{usuario.username}}
                         </li>
                     </ul>
-                    <div class="direcaodosbutoes"> 
-                        <a class="edit-link" href="{% url 'editar_perfil'%}"><button type="button">EDITAR</button><a/> 
-                        <a class="edit-link" href="{% url 'postagem'%}"><button type="button">Publicar</button><a/>
-                    </div>
                 </div>
                 <ul id="infos">
                     <li><p class="number">01</p><a href="">Obras</a></li>
@@ -39,27 +32,18 @@
         </div>
         <div id="baixo">
             <ul id="sobrecurtidos">
-                <li><a href="{% url 'autor' %}">Sobre</a></li>
-                <li><a href="{% url 'autor_obras' %}">Obras</a></li>
+                <li><a href="{% url 'visitar_autor' usuario.id %}">Sobre</a></li>
+                <li><a href="{% url 'visitar_autor_obras' usuario.id %}">Obras</a></li>
             </ul>
             <div id="linhaverdefina"></div>
         </div>
         <div id="englobar">
             <div class="sobre_o_autor">
-                {% if edicao %}
-                        {% csrf_token %}
-                        {{form.sobre}}
-                        <div class="form-buttons">
-                            <button type='submit'>Salvar alterações</button>
-                            <a href="{%url 'excluir_sobre'%}"><button type='button'>Excluir</button><a/>
-                        </div>
-                    {% else %}
-                        {% if usuario.sobre != '' %}
-                        {{usuario.sobre}}
-                        {% else %}
-                        Este usuário não possui informações aqui.
-                        {% endif %}
-                    {% endif %}
+                {% if usuario.sobre != '' %}
+                {{usuario.sobre}}
+                {% else %}
+                Este usuário não possui informações aqui.
+                {% endif %}
             </div>
         </div>
         <form/>

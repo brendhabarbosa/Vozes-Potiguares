@@ -1,0 +1,71 @@
+/* Estilos para a paginação */
+.pagination {
+    display: flex;
+    justify-content: flex-end; /* Alinha a paginação à direita */
+    list-style: none; /* Remove os marcadores padrão */
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo dos itens da página */
+.page-item {
+    margin: 0 4px;
+}
+
+/* Link da página */
+.page-link {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Hover nos links */
+.page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Efeito de foco */
+.page-link:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Página ativa */
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Desabilitar página anterior ou próxima */
+.page-item.disabled .page-link {
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border-color: #ddd;
+    pointer-events: none;
+}
+
+/* Estilo para os botões de navegação (primeira e última página) */
+.page-item .page-link[aria-label="Primeira"],
+.page-item .page-link[aria-label="Última"] {
+    font-size: 18px;
+}
+
+/* Adiciona um espaçamento maior entre as páginas */
+.pagination .page-item:not(.disabled) .page-link {
+    margin: 0 6px;
+}
+
+/* Estilo para os botões de navegação (anterior e próxima) */
+.page-item .page-link[aria-label="Anterior"],
+.page-item .page-link[aria-label="Próxima"] {
+    font-size: 18px;
+}

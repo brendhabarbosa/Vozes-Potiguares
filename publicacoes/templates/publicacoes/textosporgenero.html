@@ -8,65 +8,20 @@
         <section id="section">
             <div id="barra">POEMA</div>
             <div class="alinhar">
-                <div class="blocos">
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 6.png" alt=""></a>
-                        <div class="infos">
-                            <p>A Biblioteca da...</p>
-                            <p class="autores">Amity Blight</p>
+                <div class="bloco-grande">
+                    {% for obra in obras %}
+                        <div class="obras">
+                            <a href="{% url 'visitar_autor' obra.autor.id %}"><img src="{{ obra.autor.avatar.url }}" alt="avatar"></a>
+                            <div class="infos">
+                                <a href="{%  %}">
+                                    <p>{{ obra.titulo }}</p>
+                                </a>
+                                <a href="{% url 'visitar_autor' obra.autor.id %}">
+                                    <p class="autores">{{ obra.autor.nome_completo }}</p>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 7.png" alt=""></a>
-                        <div class="infos">
-                            <p>Eu e esse meu c...</p>
-                            <p class="autores">Willow Park</p>
-                        </div>
-                    </div>
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 8.png" alt=""></a>
-                        <div class="infos">
-                            <p>O Jardim Secreto</p>
-                            <p class="autores">Colecionador</p>
-                        </div>
-                    </div>
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 9.png" alt=""></a>
-                        <div class="infos">
-                            <p>Heartstopper</p>
-                            <p class="autores">Vee</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="blocos">
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 11.png" alt=""></a>
-                        <div class="infos">
-                            <p>Como sobreviv...</p>
-                            <p class="autores">Luz Noceda</p>
-                        </div>
-                    </div>
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 12.png" alt=""></a>
-                        <div class="infos">
-                            <p>A Troca</hp>
-                            <p class="autores">Gus Porter</p>
-                        </div>
-                    </div>
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 13.png" alt=""></a>
-                        <div class="infos">
-                            <p>As Vantagens d...</p>
-                            <p class="autores">Camila Noceda</p>
-                        </div>
-                    </div>
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 14.png" alt=""></a>
-                        <div class="infos">
-                             <p>Coraline</p>
-                             <p class="autores">Raine Whispers</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="blocos">
                     <div class="obras">

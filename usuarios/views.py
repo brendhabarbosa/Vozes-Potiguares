@@ -17,6 +17,17 @@ def autor(request):
 
     return render(request, 'usuarios/autor.html', context={ 'edicao': edicao})
 
+def visitar_autor(request, autor_id):
+    usuario = Usuario.objects.get(id=autor_id)
+
+    return render(request, 'usuarios/visitar_autor.html', context={ 'usuario': usuario })
+
+def visitar_autor_obras(request, autor_id):
+    usuario = Usuario.objects.get(id=autor_id)
+    obras = Texto.objects.filter(autor=usuario)
+
+    return render(request, 'usuarios/visitar_autor_obras.html', context={ 'usuario': usuario, 'obras': obras })
+
 def editar_perfil(request):
     edicao = True 
     usuario = Usuario.objects.get(id=request.user.id)

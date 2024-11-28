@@ -38,6 +38,9 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="mt-3">
+                {% include 'publicacoes/pagination.html' with page_obj=textos %}
+            </div>
         </div>
     </div>
 
