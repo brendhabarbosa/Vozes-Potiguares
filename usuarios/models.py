@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser, UserManager
 
 class Cidade(models.Model):
     nome = models.CharField(max_length=100,blank=False)
-    brasao = models.ImageField(upload_to="cidades/")
+    brasao = models.CharField(max_length=100,blank=False)
 
     def __str__(self):
         return self.nome

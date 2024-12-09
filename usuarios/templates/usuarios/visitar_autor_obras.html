@@ -41,6 +41,7 @@
         <div id="englobar">
             <section id="obras">
                 {% for obra in obras %}
+                <a href="{% url 'exibirtexto' obra.id %}">
                 <div class="alinharperfileinformações">
                     <div class="perfil">
                         <img id="photo"  src="/media/{{user.avatar}}" alt="">
@@ -64,6 +65,7 @@
                         </div> 
                     </div>
                 </div>
+                </a>
                 {% endfor %}
             </section>
         </div>

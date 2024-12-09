@@ -25,7 +25,11 @@
                         @{{usuario.username}}
                     </li>
                 </ul>
-                <a class="edit-link" href="{% url 'editar_perfil'%}"><button type="button">EDITAR</button><a/>
+                <div class="direcaodosbutoes"> 
+                    <a class="edit-link" href="{% url 'editar_perfil'%}"><button type="button">Editar</button><a/> 
+                    <a class="edit-link" href="{% url 'postagem'%}"><button type="button">Publicar</button><a/>
+                </div>
+
             </div>
             <ul id="infos">
                 <li><p class="number">01</p><a href="">Obras</a></li>
@@ -45,8 +49,9 @@
         <div id="englobar">
             <section id="obras">
                 {% for obra in obras %}
-                <div class="alinharperfileinformações">
-                    <div class="perfil">
+                <a href="{% url 'exibirtexto' obra.id %}">
+                    <div class="alinharperfileinformações">
+                        <div class="perfil">
                         <img id="photo"  src="/media/{{user.avatar}}" alt="">
                         <div class="nome_genero">
                             <h2>{{ obra.titulo }}</h2>
@@ -68,6 +73,7 @@
                         </div> 
                     </div>
                 </div>
+                </a>
                 {% endfor %}
             </section>
         </div>

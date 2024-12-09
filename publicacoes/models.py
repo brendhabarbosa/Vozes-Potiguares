@@ -4,6 +4,9 @@ from usuarios.models import Usuario
 class Classificação_indicativa(models.Model):
     idade = models.IntegerField(blank=False)
 
+    def __str__(self):
+        return str(self.idade)
+
 class Genero(models.Model):
     nome = models.CharField(max_length=100, blank=False) 
     def __str__(self):

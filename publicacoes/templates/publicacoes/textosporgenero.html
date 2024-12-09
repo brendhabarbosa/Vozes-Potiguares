@@ -6,26 +6,28 @@
     <link rel="stylesheet" href="{% static 'CSS/textosporgenero.css' %}">
     <main>
         <section id="section">
-            <div id="barra">POEMA</div>
+            <div id="barra">{{ nome_genero }}</div>
             <div class="alinhar">
                 <div class="bloco-grande">
                     {% for obra in obras %}
-                        <div class="obras">
-                            <a href="{% url 'visitar_autor' obra.autor.id %}"><img src="{{ obra.autor.avatar.url }}" alt="avatar"></a>
-                            <div class="infos">
-                                <a href="{%  %}">
-                                    <p>{{ obra.titulo }}</p>
-                                </a>
-                                <a href="{% url 'visitar_autor' obra.autor.id %}">
-                                    <p class="autores">{{ obra.autor.nome_completo }}</p>
-                                </a>
+                            {% comment %} <p>{{ obra.titulo }}</p> {% endcomment %}
+                             <div class="obras">
+                                <a href="{% url 'visitar_autor' obra.autor.id %}"><img src="{{ obra.autor.avatar.url }}" alt="avatar"></a>
+                                <div class="infos">
+                                    <a href="{% url 'exibirtexto' obra.id %}">
+                                        <p class="titulotexto">{{ obra.titulo }}</p>
+                                    </a>
+                                    <a href="{% url 'visitar_autor' obra.autor.id %}">
+                                        <p class="autores">{{ obra.autor.nome_completo }}</p>
+                                    </a>
+                                    
+                                </div>
                             </div>
-                        </div>
                     {% endfor %}
                 </div>
                 <div class="blocos">
-                    <div class="obras">
-                        <p id="maiscurtidos">MAIS CURTIDOS</p>
+                    <div id="maiscurtidos">
+                        <p>MAIS CURTIDOS</p>
                     </div>
                     <div class="obras">
                         <a href="/autor"><img src="/static/IMG/Ellipse 22 (1).png" alt=""></a>
@@ -51,26 +53,7 @@
                 </div>
             </div>
         </section>
-        <div id="centralizar">
-            <h1 id="titulos-az">TÍTULOS DE A-Z</h1>
-            <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Anterior">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only"></span>
-                  </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">A</a></li>
-                <li class="page-item"><a class="page-link" href="#">B</a></li>
-                <li class="page-item"><a class="page-link" href="#">C</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Próximo">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only"></span>
-                  </a>
-                </li>
-            </ul>
-        </div>
+       
     </main>
 {% endblock %}   
    

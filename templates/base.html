@@ -17,7 +17,7 @@
             <div class="Menu">
                 <div class="Titulodomenu">Menu<span id="fechar" class="material-symbols-outlined">close</span></div>
             <ul>
-                <li><a href="@">Tela Principal</a></li>
+                <li><a href="{% url 'index'%}">Tela Principal</a></li>
                 <li><a href="{% url 'autor' %}">Perfil</a></li>
                 <li><a class="Cidades">Cidades<span class="material-symbols-outlined">chevron_right</span></a>
                     <ul class="CddO">
@@ -43,17 +43,19 @@
             </div>
             <div>
                 <button id="hamburguer"><span class="material-symbols-outlined">density_medium</span></button>          
-                <a href=""><img id="logo" src="/static/IMG/image 1.png" alt=""></a>
+                <a href="{% url 'index'%}"><img id="logo" src="/static/IMG/image 1.png" alt=""></a>
                 <h1>Vozes Potiguares</h1>
             </div>
             <div id="linhaverdefina" class="small-screen"></div>
             <div>              
-                <div class="search-box">
-                    <input type="text" class="search-text" placeholder="Pesquise aqui">
-                    <a class="search-btn">
-                        <img class="lupa-green" src="/static/IMG/icons8-pesquisar-64.png" alt="">
-                    </a>
-                </div>
+                <form action="{% url 'textosfiltro' %}">
+                    <div class="search-box">
+                        <input type="text" name="search" class="search-text" placeholder="Pesquise aqui">
+                        <a class="search-btn">
+                            <img class="lupa-green" src="/static/IMG/icons8-pesquisar-64.png" alt="">
+                        </a>
+                    </div>                    
+                </form>
                 {% if usuario.is_authenticated %}
                     <div class="user-avatar-container">
                         <a href="{% url 'autor' %}">
@@ -69,24 +71,23 @@
         <div id="linhaverdefina"></div>         
     </header>
 
-   
+    <div id="base-content">
         {% block content %}
 
         {% endblock %}
-    
+    </div>
 
     <footer>
         <div class="rodape">
             <div class="redessociais">
-                <a href=""><img src="/stattic/IMG/Twitter.png" alt=""></a>
                 <a href=""><img src="/static/IMG/Gmail Logo.png" alt=""></a>
                 <a href=""><img src="/static/IMG/Instagram.png" alt=""></a>
             </div>
             <div class="sobreetermo">
-                <a href="">Sobre</a>
-                <a href="">Termos de uso</a>
+                <a href="{% url 'paginasobre'%}">Sobre</a>
+                <a href="{% url 'termosdeuso'%}">Termos de uso</a>
             </div>
-            <a href="" id="politica">Politica e privacidade</a>
+            <a href="{% url 'politicadeprivacidade'%}" id="politica">Politica de privacidade</a>
     
             <div class="Copyright">
                 <a href=""><img src="/static/IMG/Copyright.png" alt=""></a>

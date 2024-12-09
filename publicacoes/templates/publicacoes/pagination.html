@@ -1,5 +1,6 @@
 <!-- templates/components/pagination.html -->
-<link rel="stylesheet" href="/static/CSS/pagination.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/pagination.css' %}">
 {% if page_obj.paginator.num_pages > 1 %}
 <nav aria-label="Navegação de páginas">
     <ul class="pagination justify-content-end mb-0">
@@ -54,6 +55,9 @@
                 <span class="page-link">&raquo;&raquo;</span>
             </li>
         {% endif %}
+        
+        
+
     </ul>
 </nav>
 {% endif %}

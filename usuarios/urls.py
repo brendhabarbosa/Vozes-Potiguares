@@ -31,5 +31,8 @@ urlpatterns = [
     path('autor/obras', autor_obras, name='autor_obras'),
     path('sair', sair, name='sair'),
     path('paginasobre/',paginasobre, name='paginasobre'),
+    path('termosdeuso/',termosdeuso, name='termosdeuso'),
+    path('politicadeprivacidade/',politicadeprivacidade, name='politicadeprivacidade'),
     path('', include('publicacoes.urls'))
+    
 ]

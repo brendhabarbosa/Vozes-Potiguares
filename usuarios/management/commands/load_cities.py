@@ -11,5 +11,9 @@ class Command(BaseCommand):
 
             data = json.loads(raw_json)
 
+            BRASAO_PADRAO = '/static/IMG/image 1.png'
+
             for cidade in data:
-                Cidade.objects.create(nome=cidade['municipio'])
+                brasao_path = cidade.get('brasao', BRASAO_PADRAO)
+
+                Cidade.objects.create(nome=cidade['municipio'], brasao=brasao_path)

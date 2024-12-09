@@ -97,3 +97,16 @@ th {
     background-color: #007bff; /* Change background on hover */
     color: white; /* Change text color on hover */
 }
+
+.table-row {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 0.5fr 12.75rem;
+}
+
+.table-row td {
+    width: 100%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

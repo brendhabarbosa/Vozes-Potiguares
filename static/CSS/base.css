@@ -7,6 +7,11 @@
   body{
     background-color: #F1F1F1;
     margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
   }
   /* Coisas do menu*/
   .Menu{
@@ -125,7 +130,8 @@
     gap: 8px;
     margin: auto;
     max-width: 1440px;
-    margin-top:25px;
+    width: 100%;
+    padding-top:25px;
   }
   
   nav {

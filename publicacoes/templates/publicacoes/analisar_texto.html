@@ -13,7 +13,7 @@
         <div class="table-container">
             <table>
                 <thead>
-                    <tr>
+                    <tr class="table-row">
                         <th>Título</th>
                         <th>Prévia</th>
                         <th>Data de Submissão</th>
@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                     {% for texto in textos %}
-                    <tr>
+                    <tr class="table-row">
                         <td class="font-medium">{{texto.titulo}}</td>
                         <td style="width: 40%">{{texto.conteudo}}</td>
                         <td>{{texto.data_de_publicacao}}</td>

@@ -193,9 +193,15 @@ section > div{
   flex-direction: row; */
   display: grid;
   grid-template-columns: auto 1fr;
-  padding-bottom: 36px;
-
+  padding: 8px;
   width: 400px;
+
+  border: 1px solid #014040;
+  border-radius: 0.5rem;
+}
+
+.block {
+  display: block;
 }
 
 .obras * {
@@ -208,7 +214,6 @@ overflow: hidden;
 width: 86px;
 height: 86px;
 border-radius: 100%;
-
 object-fit: cover;
 }
 
@@ -228,8 +233,13 @@ margin: auto;
 
 .blocos{
     margin:auto;
+
+    display: 	flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 10px;
 }
-.obras > #maiscurtidos{
+#maiscurtidos{
     color: #014040;
     font-size: 25px;
     font-style: normal;
@@ -237,6 +247,8 @@ margin: auto;
     line-height: normal;
     display: flex;
     justify-content: right;
+    border-color: transparent;
+    padding-bottom: 20px;
 }
 .infos{
     padding: 16px;
@@ -259,18 +271,21 @@ div > p{
 }
 .autores{
     color: #DFB958;
-    font-size: 23px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+  
+  }
+
+.titulotexto {
+  color: #014040;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
-#titulos-az{
-    color: #014040;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
+
 .pagination {
     display: flex;
     list-style: none;
@@ -315,64 +330,6 @@ div > p{
 }
 
 
-/* Coisas do footer*/
-
-footer{
-  margin: auto;
-  width: 100%;
-  flex-shrink: 0;
-  background-color: #014040;
-  margin-top: 90px;
-  padding:0%;
-  max-width: 1440px;
-}
-
-.rodape{
-  display: block;
-  align-items: center;
-  justify-content: space-around;
-  padding: 24px;
-}
-.redessociais{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8px;
-  margin: 16px;
-}
-
-.sobreetermo{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8px;
-  margin: 16px;
-}
-.sobreetermo > a{
-  color: #84998D;
-  text-decoration: none;
-}
-
-.Copyright{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8px;
-  color: #84998D;
-  margin: 16px;
-}
-
-#politica{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8px;
-  text-decoration: none;
-  color: #84998D;
-  margin: 16px;
-}
-
-
 @media(max-width: 800px){
   .obras{
     display: block;
@@ -385,63 +342,6 @@ footer{
   }
 }
 
-
-/* Coisas do footer*/
-
-footer{
-  margin: auto;
-  width: 100%;
-  flex-shrink: 0;
-  background-color: #014040;
-  margin-top: 90px;
-  padding:0%;
-  max-width: 1440px;
-}
-
-.rodape{
-  display: block;
-  align-items: center;
-  justify-content: space-around;
-  padding: 24px;
-}
-.redessociais{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8px;
-  margin: 16px;
-}
-
-.sobreetermo{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8px;
-  margin: 16px;
-}
-.sobreetermo > a{
-  color: #84998D;
-  text-decoration: none;
-}
-
-.Copyright{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8px;
-  color: #84998D;
-  margin: 16px;
-}
-
-#politica{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 8px;
-  text-decoration: none;
-  color: #84998D;
-  margin: 16px;
-}
 
 
 @media (max-width: 1024px) {

@@ -148,6 +148,7 @@ padding: 0 6%;
   line-height: normal;
 }
 #enviar{
+  align-self: flex-end;
   display: flex;
   height: 37px;
   padding: 16px 12px;
@@ -241,7 +242,6 @@ form > input{
   display: flex;
   width: min(100%, 1290px);
   flex-direction: column;
- 
 }
 .flex-form{
   display: flex;
@@ -268,6 +268,17 @@ textarea {
 #linhaverdefina.small-screen {
 display: none;
 }
+
+.postagem-form {
+  background: none;
+  padding: 8px;
+  border: 1px solid #014040;
+  border-radius: 4px;
+  color: #014040;
+
+  font-size: 18px;
+}
+
 @media (max-width: 1024px) {
   header nav {
     display: grid;
@@ -297,7 +308,7 @@ display: none;
 
 
 
-.ql-container {
+/* .ql-container {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -1239,4 +1250,4 @@ display: none;
 }
 .ql-container.ql-snow {
   border: 1px solid #ccc;
-}
+} */

@@ -24,6 +24,18 @@ body {
     box-shadow: 0 4px 8px #014040;
 }
 
+ul {
+    list-style: none;
+    padding: 0; /* Remove o recuo padrão */
+    margin: 0; /* Remove o espaçamento padrão */
+}
+
+.conteudo-sobre ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .conteudo-sobre {
     margin: 72px;
     display: flex;

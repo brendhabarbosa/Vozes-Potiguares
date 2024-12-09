@@ -2,13 +2,33 @@ from django.shortcuts import render, redirect,  get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from usuarios.forms import UsuarioForm, SobreForm
-from usuarios.models import Usuario
+from usuarios.models import Usuario, Cidade
 from publicacoes.models import Texto
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from django.db.models import Q
+
 
 # Create your views here.
+
+
 def index(request):
-    return render(request, 'usuarios/index.html')
+    cidades_lista = Cidade.objects.all()        
+
+    paginator = Paginator(cidades_lista, 6)
+
+    cidades_matriz = []
+
+    for page in paginator.page_range:
+        cidades_matriz.append(paginator.get_page(page))
+
+    context = {
+        "cidades": cidades_matriz
+    }
+    
+    print(cidades_matriz[0])
+
+    return render(request, 'usuarios/index.html', context)
 
 @login_required(login_url='/paginadelogin')
 def autor(request):
@@ -71,6 +91,7 @@ def cadastro(request):
     form = UsuarioForm()
     if request.method == 'POST':
         form = UsuarioForm(request.POST)
+        print(form.errors)
         if form.is_valid():
              Usuario.objects.create_user(**form.cleaned_data)
              return redirect('paginadelogin')
@@ -103,3 +124,10 @@ def excluir_perfil(request,id):
     usuario = Usuario.objects.get(id=id)
     usuario.delete()
     return redirect('autor')
+
+def termosdeuso(request):
+    return render(request, 'usuarios/termosdeuso.html')
+
+
+def politicadeprivacidade(request):
+    return render(request, 'usuarios/politicadeprivacidade.html')
