@@ -50,7 +50,13 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
+
+
+.card-body > a:hover{
+  text-decoration: none;
+  color: #7fa4a4;
+}
   
 /* .autores{
   color: #DFB958;

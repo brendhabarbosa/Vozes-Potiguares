@@ -1,159 +1,21 @@
-*{
-  font-family: sans-serif;
+
+.linhaverdefina{
+  display: flex;
+  width: min(100%, 1290px);
+  margin: auto;
+  padding: auto;
+  margin-bottom: 10px;
+  height: 10px;
+  background-color: #014040;
+  fill: #014040;
+  stroke-width: 1px;
+  stroke: #000;
+  border-radius: 4px;
+}  
+
+a:hover{
+  text-decoration: none;
 }
-  body{
-    background-color: #F1F1F1;
-    margin: auto;
-  }
-    .Menu{
-      background-color: #496863;
-      width: 250px;
-      height: 100%;
-      position: fixed;
-      display: none;
-      top: 0; /* COLOCAR O MENU ATÉ O TOPO */
-      overflow-y: auto;
-      left: 0%;
-      z-index: 10;
-    }
-    .Titulodomenu{
-      color: #FFFFFF;
-      text-align: center;
-      font-weight: bold;
-      line-height: 45px;
-      font-size: 24px;
-      border-bottom: 2px solid #F1F1F1;
-    }
-    .Menu ul{
-      list-style: none;
-      
-    }
-    .Menu ul li{
-      line-height: 40px;
-      border-bottom: solid #F1F1F1;
-    }
-    .Menu ul li a {
-      color: #F1F1F1;
-      list-style: none;
-      text-decoration: none;
-      font-size: 20px;
-      padding-left: 30px;
-      display: block;
-    }
-    .Menu ul li a:hover{
-      background-color: #bec1c1;
-      transition: 0.5s;
-    }
-    .Menu ul ul li a{
-      font-size: 16px;
-      font-weight: 300;
-      padding-left: 60px;
-      background-color: #587663;
-    }
-    .CddO{
-      display: none;
-      
-    }
-    .GeneL{
-      display: none;
-      
-    }
-    #hamburguer{
-      background-color: #F1F1F1;
-      color: #014040;
-      border: #F1F1F1;
-      width: 43px;
-      height: 43px;
-      cursor: pointer;
-    }
-    #fechar{
-      position: relative;
-      left: 20px;
-      top: 3px;
-      border: 1px solid #bec1c1;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    
-    #fechar:hover{
-      border: 1px solid #F1F1F1;
-    }
-    #logo{
-      fill: url(<path-to-image>), lightgray 50% / cover no-repeat;
-    }
-    h1{
-      font-size: 30px; 
-    }
-    /* header/nav */
-    .search-box{
-      /* position: absolute; */
-      top: 10%;
-      left: 10%;
-      transform: translate(-10%, -10% );
-      border-radius: 40px;
-      display: flex;
-      justify-content: space-between;
-    }
-    .search-box:hover > .search-text{
-      width:320px;
-      padding-left:20px;
-    }
-    .search-text{
-      background: none;
-      border: 0;
-      outline: 0;
-      font-size: 16px;
-      transition: 0.4s;
-      width: 0;
-    }
-    .search-btn{
-      width: 40px;
-      height: 40px;
-      display: flex;
-      margin-bottom: 3px;
-    }
-    header{
-      display: flex;
-      justify-content: space-around;
-      flex-wrap:wrap;
-      gap: 0px;
-      /* height: 107px; */
-      gap: 8px;
-      margin: auto;
-      max-width: 1440px;
-      margin-top:25px;
-    }
-    
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 0 6%;
-    }
-    h1{
-      color: #014040;
-      font-weight: bold;
-    }
-    nav > div:not(:nth-of-type(1)) {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-    
-    .linhaverdefina{
-      display: flex;
-      width: min(100%, 1290px);
-      margin: auto;
-      padding: auto;
-      margin-bottom: 10px;
-      height: 10px;
-      background-color: #014040;
-      fill: #014040;
-      stroke-width: 1px;
-      stroke: #000;
-      border-radius: 4px;
-    }  
 #barra{
     width: min(100%, 1290px);
     height: 37px;
@@ -195,7 +57,6 @@ section > div{
   grid-template-columns: auto 1fr;
   padding: 8px;
   width: 400px;
-
   border: 1px solid #014040;
   border-radius: 0.5rem;
 }

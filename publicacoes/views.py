@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from publicacoes.forms import TextoForm
 from django.contrib.admin.views.decorators import staff_member_required
 from publicacoes.models import Texto, Revisão, Genero
-from usuarios.models import Usuario
+from usuarios.models import Usuario, Cidade
 from datetime import date
 from django.core.paginator import Paginator
 from django.http import HttpResponseBadRequest
@@ -30,6 +30,22 @@ def postagem(request):
             return redirect('autor')  # Redireciona para página de sucesso
     else:
         form = TextoForm() 
+
+    contexto = {'form': form}
+    return render(request, 'publicacoes/postagem.html', contexto)
+
+def editar_texto(request, texto_id):
+    obra = Texto.objects.get(id=texto_id)
+
+    if request.method == 'POST':
+        form = TextoForm(request.POST, request.FILES, instane=obra)
+        if form.is_valid():
+            texto = form.save(commit=False)  # Cria instância sem salvar
+            texto.data_de_publicacao = date.today()
+            texto.save()  # Salva a notícia no banco
+            return redirect('autor')  # Redireciona para página de sucesso
+    else:
+        form = TextoForm(instance=obra) 
 
     contexto = {'form': form}
     return render(request, 'publicacoes/postagem.html', contexto)
@@ -77,8 +93,18 @@ def lista_textos(request):
         'textos': textos
     })
 
-def textosdevolvidos(request):
-    return render(request, 'publicacoes/textosdevolvidos.html')
+def textosdevolvidos(request, texto_id):
+    texto = Texto.objects.get(id=texto_id)
+    revisao = Revisão.objects.filter(texto=texto, publicado=False).first()
+
+    context = {
+        "texto": texto,
+        "revisao": revisao
+    }
+
+    print(revisao.motivo_devolucao)
+
+    return render(request, 'publicacoes/textosdevolvidos.html', context)
 
 def textosfiltro(request):
     filtro_pesquisa = request.GET.get('search')
@@ -95,18 +121,21 @@ def textosfiltro(request):
 
     return render(request, 'publicacoes/textosfiltro.html', contexto)
 
-def textosporcidade(request):
-    obras_lista = Texto.objects.filter(publicacao=True)
-    page = 1
+def textosporcidade(request, id):
+    cidade = Cidade.objects.get(id=id)
+    obras_lista = Texto.objects.filter(publicacao=True, autor__cidade=id)
+    page = request.GET.get('page', 1)
 
-    paginator = Paginator(obras_lista, 6)
+    print(obras_lista, id)
+
+    paginator = Paginator(obras_lista, 3)
 
     try:
         obras = paginator.get_page(page)
     except:
         obras = paginator.get_page(1)
 
-    return render(request, 'publicacoes/textosporcidade.html', { 'obras': obras })
+    return render(request, 'publicacoes/textosporcidade.html', { 'obras': obras, 'cidade': cidade })
 
 def textosporgenero(request):
     genero = request.GET.get('genero', None)

@@ -24,7 +24,7 @@
                     <div class="carousel-item {% if forloop.first %} active {% endif %}">
                         <div class="row">
                           {% for cidade in cidade_lista %}
-                            <div><a href="/texto-por-cidade"><img src="{{ cidade.brasao}}" alt=""></a><p>{{ cidade.nome }}</p></div>
+                            <div><a href="{% url 'textosporcidade' cidade.id %}"><img src="{{ cidade.brasao}}" alt=""></a><p>{{ cidade.nome }}</p></div>
                           {% endfor %}
                         </div>
                     </div>

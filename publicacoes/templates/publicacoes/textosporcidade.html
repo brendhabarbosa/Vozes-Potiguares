@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{% static 'CSS/textosporcidade.css' %}">
     <main>
         <section id="section">
-            <div id="barra">ALEXANDRIA</div>
+            <div id="barra">{{ cidade.nome }}</div>
             <div class="alinhar">
 
                 <div class="bloco-grande">
@@ -50,25 +50,8 @@
                 </div>
             </div>
         </section>
-        <div id="centralizar">
-            <h1 id="titulos-az">TÍTULOS DE A-Z</h1>
-            <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Anterior">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only"></span>
-                  </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">A</a></li>
-                <li class="page-item"><a class="page-link" href="#">B</a></li>
-                <li class="page-item"><a class="page-link" href="#">C</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Próximo">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only"></span>
-                  </a>
-                </li>
-            </ul>
+        <div class="mt-3 pagination">
+            {% include 'publicacoes/pagination.html' with page_obj=obras %}
         </div>
     </main>
 {% endblock %}   

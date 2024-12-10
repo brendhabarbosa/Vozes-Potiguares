@@ -38,7 +38,6 @@ ul {
 
 .conteudo-sobre {
     margin: 72px;
-    display: flex;
     align-items: center;
     gap: 72px;
 }
@@ -64,8 +63,9 @@ ul {
     line-height: 1.6;
 }
 .logo{
-    margin: auto;
-    justify-items: center;
+    display: flex;
+    gap: 200px;
+    margin: 72px;
 }
 .logo > p{
     color: #014040;

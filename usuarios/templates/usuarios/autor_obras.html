@@ -49,31 +49,31 @@
         <div id="englobar">
             <section id="obras">
                 {% for obra in obras %}
-                <a href="{% url 'exibirtexto' obra.id %}">
                     <div class="alinharperfileinformações">
                         <div class="perfil">
                         <img id="photo"  src="/media/{{user.avatar}}" alt="">
-                        <div class="nome_genero">
-                            <h2>{{ obra.titulo }}</h2>
-                            <div>
-                                <p>{{ obra.genero }}</p>
-                                <p>{{ obra.classificacao.idade }}</p>
+                        <a href="{% url 'exibirtexto' obra.id %}">
+                            <div class="nome_genero">
+                                <h2>{{ obra.titulo }}</h2>
+                                <div>
+                                    <p>{{ obra.genero }}</p>
+                                    <p>{{ obra.classificacao.idade }}</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="informações">
-                        <button class="acao-obras" onclick="abrirObraMenu(1)"><span class="material-symbols-outlined">more_vert</span></button>
+                        <button type="button" class="acao-obras" onclick="abrirObraMenu(1)"><span class="material-symbols-outlined">more_vert</span></button>
                         <p id="qnt_curtidas">4 curtidas</p>
                         <div class="menu-obras" id="menu-obras-1">
                             <div class="Titulodomenu"><span onclick="abrirObraMenu(1)" id="fechar" class="material-symbols-outlined">close</span></div>
                             <ul>
-                                <li><a href="@">Editar</a></li>
+                                <li><a href="{% url 'editar_texto' obra.id %}">Editar</a></li>
                                 <li><a href="@">Excluir</a></li>
                             </ul>
                         </div> 
                     </div>
                 </div>
-                </a>
                 {% endfor %}
             </section>
         </div>

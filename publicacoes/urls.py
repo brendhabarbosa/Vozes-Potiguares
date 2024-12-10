@@ -21,9 +21,10 @@ from publicacoes.views import *
 urlpatterns = [
     path('exibirtexto/<int:texto_id>/', exibirtexto, name='exibirtexto'),
     path('postagem/', postagem, name='postagem'),
+    path('editar_texto/<int:texto_id>/', editar_texto, name='editar_texto'),
     path('revisartexto/<int:texto_id>/', revisartexto, name='revisartexto'),
-    path('textosdevolvidos', textosdevolvidos, name='textosdevolvidos'),
-    path('textosporcidade/', textosporcidade, name='textosporcidade'),
+    path('textosdevolvidos/<int:texto_id>/', textosdevolvidos, name='textosdevolvidos'),
+    path('textosporcidade/<int:id>/', textosporcidade, name='textosporcidade'),
     path('textosporgenero/', textosporgenero, name='textosporgenero'),
     path('textosfiltro/', textosfiltro, name='textosfiltro'),
     path('analisar_texto/', lista_textos, name='analisar_texto'),

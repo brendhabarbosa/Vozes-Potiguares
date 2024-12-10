@@ -1,16 +1,18 @@
 /* Estilos para a paginação */
 .pagination {
     display: flex;
-    justify-content: flex-end; /* Alinha a paginação à direita */
+    justify-content: center; /* Alinha a paginação à direita */
+    align-items: center;
     list-style: none; /* Remove os marcadores padrão */
     padding: 0;
-    margin: 0;
+    margin: auto;
 }
 
 /* Estilo dos itens da página */
 .page-item {
     margin: 0 4px;
 }
+
 
 /* Link da página */
 .page-link {
@@ -69,3 +71,4 @@
 .page-item .page-link[aria-label="Próxima"] {
     font-size: 18px;
 }
+
