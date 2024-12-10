@@ -50,11 +50,20 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+  }
+  
+/* .autores{
+  color: #DFB958;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+} */
 
 .title{
   font-size: 24px;
   font-weight: 500;
+  color: #DFB958;
 }
 
 .card{
@@ -95,4 +104,3 @@ section{
   margin: auto;
   cursor: pointer;
 }
-

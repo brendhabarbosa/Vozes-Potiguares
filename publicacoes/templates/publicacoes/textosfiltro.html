@@ -10,11 +10,15 @@
             <div class="alinhar">
                 <div class="blocos">
                     {% for texto in textos %}
-                    <div class="obras">
-                        <a href="{% url 'exibirtexto' texto.id %}"><img src="{{ texto.imagem.url }}" alt=""></a>
-                        <div class="infos">
-                            <p>{{ texto.titulo }}</p>
-                            <p class="autores">{{ texto.autor.username }}</p>
+                    <div class="card">
+                        <a href="{% url 'visitar_autor' texto.autor.id %}"><img src="{{ texto.autor.avatar.url }}" class="img" alt="avatar"></a>
+                        <div class="card-body">
+                            <a href="{% url 'exibirtexto' texto.id %}">
+                                <p class="title">{{ texto.titulo }}</p>
+                            </a>
+                            <a href="{% url 'visitar_autor' texto.autor.id %}">
+                                <p class="autores">{{ texto.autor.username }}</p>
+                            </a>
                         </div>
                     </div>
                     {% endfor %}
