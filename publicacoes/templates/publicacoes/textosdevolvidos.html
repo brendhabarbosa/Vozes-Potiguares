@@ -36,13 +36,14 @@
         <div id="RefazerouDeletar">
             <p>Deseja refazer ou deletar seu texto?</p>
             <div id="button">
-                <a href="{% url 'editar_texto' texto.id %}">
+                <!-- <a href="{% url 'editar_texto' texto.id %}">
                     <button>Refazer</button>
-                </a>
-                <a href="{% url 'editar_texto' texto.id %}">
+                </a> -->
+                <a href="{% url 'excluir_texto' texto.id %}?next=/autor/obras">
                     <button>Deletar</button>
                 </a>
             </div>
         </div>
+        <p class="refazer-mensagem">Para refazer seu texto, exclua-o e crie de novo.</p>
     </main>
 {% endblock %}

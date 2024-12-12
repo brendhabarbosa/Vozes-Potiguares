@@ -15,7 +15,7 @@
             <div class="alinharinput"> 
                 {% csrf_token %}              
                 <label for="">Usuário</label>
-                <input  name="username" type="text" class="estiloemail" placeholder="vozesdooestepotiguar@exemplo.com" required>
+                <input  name="username" type="text" class="estiloemail" placeholder="Usuário" required>
                 <label for="">Senha</label>
                 <div class="input"><input name="password" type="password" placeholder="********"></div>
             </div>
@@ -23,7 +23,7 @@
             
         </form>
         <div id="esquecadras">
-            <a href=""><P>Esqueceu sua senha?</P></a>
+            <!-- <a href=""><P>Esqueceu sua senha?</P></a> -->
             <a href="{% url 'cadastro' %}"><p>Não possui conta? Cadastre-se!</p></a>
         </div>
     </div>

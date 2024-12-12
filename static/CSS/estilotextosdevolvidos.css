@@ -412,6 +412,10 @@
   #linhaverdefina.small-screen {
     display: none;
   }
+
+  .refazer-mensagem {
+    text-align: center;
+  }
   
   @media (max-width: 1024px) {
     header nav {

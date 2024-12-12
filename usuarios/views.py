@@ -3,10 +3,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from usuarios.forms import UsuarioForm, SobreForm
 from usuarios.models import Usuario, Cidade
-from publicacoes.models import Texto
+from publicacoes.models import Texto, Curtidas
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.db import models
 
 
 # Create your views here.
@@ -70,13 +71,12 @@ def autor_obras(request):
     print(request.user.username)
     usuario = Usuario.objects.get(username=request.user.username)
     obras = Texto.objects.filter(autor=usuario)
-
-    print(request.user.pk)
-    print(usuario)
-    print(obras)
+    curtidas = Curtidas.objects.filter(usuario=usuario).annotate(total_curtidas=models.Count('texto'))
+    print(curtidas)
 
     context = {
-        'obras': obras
+        'obras': obras,
+        'curtidas': curtidas
     }
 
     return render(request, 'usuarios/autor_obras.html', context=context)

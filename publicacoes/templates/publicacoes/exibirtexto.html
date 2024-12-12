@@ -31,13 +31,16 @@
             
             </div>
             <div class="interação">
-                <a href=""><img src="/static/IMG/InstagramLogo.svg" alt=""></a>
-                <a href=""><img src="/static/IMG/Heart.svg" alt=""></a>
+                {% if curtida %}
+                    <a href="{% url 'curtir_texto' texto.id %}" ><img src="/static/IMG/favorite_32dp_014040.svg" alt=""></a>
+                {% else %}
+                    <a href="{% url 'curtir_texto' texto.id %}" ><img src="/static/IMG/Heart.svg" alt=""></a>
+                {% endif %}
             </div>
         </section>
         
         <div id="textodoautor" class="textodoautor">
-            {{ texto.conteudo }}
+            {{ texto.conteudo|safe }}
         </div>
 
     </div>

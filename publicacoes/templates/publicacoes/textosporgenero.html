@@ -29,30 +29,20 @@
                     <div id="maiscurtidos">
                         <p>MAIS CURTIDOS</p>
                     </div>
+                    {% for curtida in curtidas %}
                     <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 22 (1).png" alt=""></a>
+                        <a href="/autor"><img src="{{ curtida.texto.autor.avatar.url }}" alt=""></a>
                         <div class="infos">
-                            <p>O Pequeno P...</p>
-                            <p class="autores">Eda Clawthorne</p>
+                            <p>{{ curtida.texto.titulo }}</p>
+                            <p class="autores">{{ curtida.texto.autor }}</p>
                         </div>
                     </div>
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 23.png" alt=""></a>
-                        <div class="infos">
-                            <p>Teto para dois</p>
-                            <p class="autores">King</p>
-                        </div>
-                    </div>
-                    <div class="obras">
-                        <a href="/autor"><img src="/static/IMG/Ellipse 25.png" alt=""></a>
-                        <div class="infos">
-                            <p>Eu sou um ga...</p>
-                            <p class="autores">Hunter</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
+
+        {% include 'publicacoes/pagination.html' with page_obj=obras %}
        
     </main>
 {% endblock %}   

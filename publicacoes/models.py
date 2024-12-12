@@ -20,6 +20,7 @@ class Texto(models.Model):
     conteudo = models.TextField(blank=False)
     data_de_publicacao = models.DateField(blank=False)
     publicacao = models.BooleanField(default=False)
+    devolvido = models.BooleanField(default=False)
     def __str__(self):
         return self.titulo
 

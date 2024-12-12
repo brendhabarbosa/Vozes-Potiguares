@@ -24,14 +24,16 @@
                     {% for texto in textos %}
                     <tr class="table-row">
                         <td class="font-medium">{{texto.titulo}}</td>
-                        <td style="width: 40%">{{texto.conteudo}}</td>
+                        <td style="width: 40%">{{texto.conteudo|safe}}</td>
                         <td>{{texto.data_de_publicacao}}</td>
                         <td>
                             <div class="actions">
                                 <a href="{% url 'revisartexto' texto.id %}">
                                     <button class="button outline">Revisar</button>
                                 </a>
-                                <button class="button destructive">Excluir</button>
+                                <a href="{% url 'excluir_texto' texto.id %}">
+                                    <button class="button destructive">Excluir</button>
+                                </a> 
                             </div>
                         </td>
                     </tr>

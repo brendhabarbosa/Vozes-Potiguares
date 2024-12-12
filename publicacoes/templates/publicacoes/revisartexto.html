@@ -9,7 +9,7 @@
             <div class="BusqueporGenerocidade">Revisão e publicação do texto</div>
             <div class="alinhardatasinfor">
                 <div class="informações">           
-                    <h2>Casa coruja</h2>
+                    <h2>{{ texto.titulo }}</h2>
                     <p>{{ texto.genero }} - {{ texto.classificacao.idade }}</p>
                 </div>
                 <div id="datasdepublicação">
@@ -21,15 +21,13 @@
             <div id="linha"></div>
         </section>
         <div class="textodoautor">
-            {{ texto.conteudo }}
-
+            {{ texto.conteudo|safe }}
             <div id="linhabaixo"></div>
-            
         </div>
-            <div>
+            <!-- <div>
               {% comment %} <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter" /> {% endcomment %}
               {% comment %} <label for="subscribeNews"> Texto já foi revisado </label> {% endcomment %}
-            </div>
+            </div> -->
             <div id="butplublicar">
                 <a href="{% url 'publicar_texto' texto.id %}">
                     <button type="button">Publicar</button>

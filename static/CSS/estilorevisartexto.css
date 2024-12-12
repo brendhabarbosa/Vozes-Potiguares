@@ -331,10 +331,12 @@ form{
 #butplublicar  button{
   color: #014040;
   background-color: #F1F1F1;
-
   margin-top: 20px;
 }
+#butplubutton> a:hover {
+  text-decoration: none;
 
+}
 #Devolver{
   width: min(100%, 900px);
   margin: auto;

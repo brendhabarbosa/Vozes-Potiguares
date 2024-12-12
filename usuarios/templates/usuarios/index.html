@@ -8,10 +8,10 @@
         <section>
             <div class="BusqueporGenerocidade">BUSQUE POR GÊNERO</div>
             <div class="cards">
-                <a href="{% url 'textosporgenero' %}?genero=Poemas"><img class="imagemgenero" src="/static/IMG/imagem.poemas.png" alt=""></a>
-                <a href="{% url 'textosporgenero' %}?genero=Contos"><img class="imagemgenero" src="/static/IMG/imagem.contos.jpeg" alt=""></a>
-                <a href="{% url 'textosporgenero' %}?genero=Crônicas"><img class="imagemgenero" src="/static/IMG/imagem.cronicas.jpeg" alt=""></a>
-                <a href="{% url 'textosporgenero' %}?genero=Outros"><img class="imagemgenero" src="/static/IMG/imagem.outros.jpeg" alt=""></a>
+                <a href="{% url 'textosporgenero' 'Poemas' %}"><img class="imagemgenero" src="/static/IMG/imagem.poemas.png" alt=""></a>
+                <a href="{% url 'textosporgenero' 'Contos' %}"><img class="imagemgenero" src="/static/IMG/imagem.contos.jpeg" alt=""></a>
+                <a href="{% url 'textosporgenero' 'Cronicas' %}"><img class="imagemgenero" src="/static/IMG/imagem.cronicas.jpeg" alt=""></a>
+                <a href="{% url 'textosporgenero' 'Outros' %}"><img class="imagemgenero" src="/static/IMG/imagem.outros.jpeg" alt=""></a>
             </div>
             <div class="BusqueporGenerocidade">CIDADE ESPECÍFICA? CLIQUE AQUI:</div>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

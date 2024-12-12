@@ -63,13 +63,13 @@
                         </a>
                     </div>
                     <div class="informações">
-                        <button type="button" class="acao-obras" onclick="abrirObraMenu(1)"><span class="material-symbols-outlined">more_vert</span></button>
+                        <button type="button" class="acao-obras" onclick="abrirObraMenu('{{ forloop.counter }}')"><span class="material-symbols-outlined">more_vert</span></button>
                         <p id="qnt_curtidas">4 curtidas</p>
-                        <div class="menu-obras" id="menu-obras-1">
-                            <div class="Titulodomenu"><span onclick="abrirObraMenu(1)" id="fechar" class="material-symbols-outlined">close</span></div>
+                        <div class="menu-obras" id="menu-obras-{{ forloop.counter }}">
+                            <div class="Titulodomenu"><span onclick="abrirObraMenu('{{ forloop.counter }}')" id="fechar" class="material-symbols-outlined">close</span></div>
                             <ul>
-                                <li><a href="{% url 'editar_texto' obra.id %}">Editar</a></li>
-                                <li><a href="@">Excluir</a></li>
+                                <li><a href="{% url 'excluir_texto' obra.id %}?next=/autor/obras">Excluir</a></li>
+                                {% if obra.devolvido %} <li><a href="{% url 'textosdevolvidos' obra.id %}">Ver revisão</a></li>{% endif %}
                             </ul>
                         </div> 
                     </div>

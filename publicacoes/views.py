@@ -1,21 +1,39 @@
 from django.shortcuts import render, redirect
 from publicacoes.forms import TextoForm
 from django.contrib.admin.views.decorators import staff_member_required
-from publicacoes.models import Texto, Revisão, Genero
+from publicacoes.models import Texto, Revisão, Genero, Curtidas
 from usuarios.models import Usuario, Cidade
 from datetime import date
 from django.core.paginator import Paginator
 from django.http import HttpResponseBadRequest
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.db import models
 
 # Create your views here.
 def exibirtexto(request, texto_id):
     texto = Texto.objects.get(id=texto_id)
+    curtida = Curtidas.objects.filter(texto=texto, usuario=request.user).first()
 
-    context = { 'texto': texto }
+    context = {
+        'texto': texto,
+        'curtida': curtida
+    }
 
     return render(request, 'publicacoes/exibirtexto.html', context)
+
+def curtir_texto(request, texto_id):
+    texto = Texto.objects.get(id=texto_id)
+    usuario = Usuario.objects.get(id=request.user.id)
+
+    curtida = Curtidas.objects.filter(texto=texto, usuario=usuario).first()
+
+    if (curtida):
+        curtida.delete()
+    else:
+        Curtidas.objects.create(texto=texto, usuario=usuario)
+
+    return redirect('exibirtexto', texto_id=texto_id)
 
 
 def postagem(request):
@@ -38,17 +56,27 @@ def editar_texto(request, texto_id):
     obra = Texto.objects.get(id=texto_id)
 
     if request.method == 'POST':
-        form = TextoForm(request.POST, request.FILES, instane=obra)
+        form = TextoForm(request.POST, request.FILES, instance=obra)
         if form.is_valid():
             texto = form.save(commit=False)  # Cria instância sem salvar
             texto.data_de_publicacao = date.today()
-            texto.save()  # Salva a notícia no banco
+            texto.devolvido = False
+            texto.save()
+            # Salva a notícia no banco
             return redirect('autor')  # Redireciona para página de sucesso
     else:
         form = TextoForm(instance=obra) 
 
     contexto = {'form': form}
     return render(request, 'publicacoes/postagem.html', contexto)
+
+def excluir_texto(request, texto_id):
+    next = request.GET.get('next', 'index')
+
+    texto = Texto.objects.get(id=texto_id)
+    texto.delete()
+
+    return redirect(next)
 
 def revisartexto(request, texto_id):
     texto = Texto.objects.get(id=texto_id)
@@ -65,6 +93,7 @@ def publicar_texto(request, texto_id):
 
     Revisão.objects.create(texto=texto, revisor=usuario, publicado=True)
     texto.publicacao = True
+    texto.devolvido = False
     texto.save()
 
     return redirect('exibirtexto', texto_id=texto_id)
@@ -76,6 +105,8 @@ def devolver_texto(request, texto_id):
     texto = Texto.objects.get(id=texto_id)
 
     Revisão.objects.create(texto=texto, revisor=usuario, motivo_devolucao=motivo_devolucao)
+    texto.devolvido = True
+    texto.save()
 
     return redirect('analisar_texto')
 
@@ -137,12 +168,12 @@ def textosporcidade(request, id):
 
     return render(request, 'publicacoes/textosporcidade.html', { 'obras': obras, 'cidade': cidade })
 
-def textosporgenero(request):
-    genero = request.GET.get('genero', None)
+def textosporgenero(request, genero):
+    # genero = request.GET.get('genero', None)
     if not genero:
         return HttpResponseBadRequest("O parâmetro 'genero' é obrigatório.")
     
-    generos_principais = ["Poemas", "Contos", "Crônicas"]
+    generos_principais = ["Poemas", "Contos", "Cronicas"]
     genero_obj = Genero.objects.filter(nome=genero).first()
     
     nome_genero = ""
@@ -162,10 +193,19 @@ def textosporgenero(request):
         obras = paginator.get_page(page)
     except:
         obras = paginator.get_page(1)
+    
+    curtidas_por_obras = Curtidas.objects.filter(texto__in=obras).annotate(total_curtidas=models.Count('texto')).order_by('total_curtidas')
 
+    curtidas = []
+    contador = 0
+    for curtida_por_obra in curtidas_por_obras:
+        if contador < 3:
+            curtidas.append(curtida_por_obra)
+            contador += 1
     contexto = {
         'obras': obras,
         'nome_genero': nome_genero,
+        'curtidas': curtidas
     }
 
     return render(request, 'publicacoes/textosporgenero.html', contexto)
@@ -174,7 +214,7 @@ def textosporgenero(request):
 
 @staff_member_required
 def analisar_texto(request):
-    textos = Texto.objects.filter(publicacao=False)
+    textos = Texto.objects.filter(Q(publicacao=False) & Q(devolvido=False))
 
     context = {
         "textos": textos

@@ -110,3 +110,71 @@ section{
   margin: auto;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+.barraautor {
+  display: flex;
+  width: min(100%, 1290px);
+  height: 37px;
+  margin: auto;
+  flex-shrink: 0;
+  background-color: #014040;
+  border: 1px solid #014040;
+  border-radius: 4px;
+  color: #F1F1F1;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  justify-content: center;
+  margin-top: 36px;
+  align-items: center;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-form label {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.filter-form select,
+.filter-form input {
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.filter-form button {
+  background-color: #014040;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.filter-form button:hover {
+  background-color: #014040;
+}

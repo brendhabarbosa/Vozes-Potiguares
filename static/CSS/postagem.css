@@ -308,7 +308,7 @@ display: none;
 
 
 
-/* .ql-container {
+.ql-container {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -329,6 +329,7 @@ display: none;
   overflow-y: hidden;
   position: absolute;
   top: 50%;
+  display: none;
 }
 .ql-clipboard p {
   margin: 0;
@@ -1250,4 +1251,7 @@ display: none;
 }
 .ql-container.ql-snow {
   border: 1px solid #ccc;
-} */
+}
+.textodoautor .ql-tooltip.ql-hidden {
+  display: none !important;
+}

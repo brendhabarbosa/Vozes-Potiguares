@@ -14,6 +14,7 @@
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
+    text-align: center;
 }
 .pag_autor > #user{
     color: #014040;
@@ -144,6 +145,10 @@ button:hover {
     color: #014040;
     font-size: 24px;
     font-weight: 700;
+}
+
+#sobrecurtidos a{
+    text-decoration: none;
 }
 
 .nome_genero > h2{
