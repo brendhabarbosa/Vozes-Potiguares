@@ -96,7 +96,8 @@ form .input input {
 }
 
 form .estiloemail{
-    background: url('../IMG/EnvelopeSimple.png');
+    background: url(../IMG/User.png);
+
     background-repeat: no-repeat;
     background-position:  10px center;
     padding-left: 40px;

@@ -61,12 +61,34 @@ section > div{
   border-radius: 0.5rem;
 }
 
+.obrascurtidas{
+  
+  color: #014040;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  justify-content: right;
+  border-color: transparent;
+  padding-bottom: 20px;
+
+}
+
   .obras * {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
 
+.titulotexto {
+    color: #014040;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+  
 
 
   .obras img {

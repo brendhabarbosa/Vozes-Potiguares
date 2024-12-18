@@ -14,7 +14,9 @@
                         <div class="obras">
                             <a href="{% url 'visitar_autor' obra.autor.id %}"><img src="{{ obra.autor.avatar.url }}" alt="avatar"></a>
                             <div class="infos">
-                                <p>{{ obra.titulo }}</p>
+                                <a href="{% url 'exibirtexto' obra.id %}">
+                                    <p class="titulotexto">{{ obra.titulo }}</p>
+                                </a>
                                 <a href="{% url 'visitar_autor' obra.autor.id %}">
                                     <p class="autores">{{ obra.autor.nome_completo }}</p>
                                 </a>
@@ -23,9 +25,18 @@
                     {% endfor %}
                 </div>
                 <div class="blocos">
-                    <div class="obras" >
+                    <div class="obrascurtidas" >
                         <p id="maiscurtidos">MAIS CURTIDOS</p>
                     </div>
+                    {% for curtida in curtidas %}
+                    <div class="obras">
+                        <a href="/autor"><img src="{{ curtida.texto.autor.avatar.url }}" alt=""></a>
+                        <div class="infos">
+                            <p>{{ curtida.texto.titulo }}</p>
+                            <p class="autores">{{ curtida.texto.autor }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
                     {%comment%}
                     <div class="obras">
                         <a href=""><img src="/static/IMG/Ellipse 22 (1).png" alt=""></a>

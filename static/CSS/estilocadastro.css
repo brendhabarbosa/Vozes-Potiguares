@@ -97,8 +97,12 @@ form > div > input{
     gap: 12px;
     border-radius: 4px;
     background: #496863;
-    color: #84998D;
+    color: #FFF;
     font-weight: bold;
+}
+
+input[type="date"] {
+    color: #84998D; /* Cor do texto dos campos de data */
 }
 input::placeholder{
     color: #84998D;
@@ -108,6 +112,7 @@ form .estilouser{
     background: url('../IMG/User.png');
     background-repeat: no-repeat;
     background-position:  10px center;
+    /* color: #84998D; */
     padding-left: 40px;
     background-size: 24px 24px;
     background-color: #496863;
@@ -146,6 +151,7 @@ label{
     margin-top: 12px;
     margin-bottom: 12px;
 }
+
 button{
     display: block;
     display: flex;
@@ -171,3 +177,16 @@ button{
     color: #84998D;
     font-weight: bold;
  }
+
+
+.termos{
+    font-weight: 700;
+    display: flex;
+    gap: 8px;
+    color: #FFF;
+}
+
+a{
+    text-decoration: underline;
+    color: #84998D;
+}

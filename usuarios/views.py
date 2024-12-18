@@ -94,6 +94,9 @@ def autor_deslogado(request):
 def cadastro(request):
     form = UsuarioForm()
     if request.method == 'POST':
+        termos_de_uso = request.POST.get('termos_de_uso')
+        if not termos_de_uso:
+            messages.error(request, 'Você deve aceitar os termos de uso para prosseguir.')
         form = UsuarioForm(request.POST)
         print(form.errors)
         if form.is_valid():

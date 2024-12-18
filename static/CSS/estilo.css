@@ -247,10 +247,6 @@ section > div{
 }
 
 
-.pesquisarporautor{
-
-}
-
 /* Coisas do footer*/
 
 footer{
@@ -338,15 +334,15 @@ footer{
   display: none;
 }
 
-.white{color: white;
-
+.white{
+  color: white;
 }
 p{
   color: #014040;
   font-weight: bold;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   header nav {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -356,7 +352,7 @@ p{
   header nav div:nth-child(3) {
     grid-column-start: 1;
     grid-column-end: 3;
- }
+  }
   header nav div:nth-child(4) {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -381,8 +377,9 @@ p{
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 970px) {
   .cards {
+    display: grid;
     grid-template-columns: 1fr;
     padding: 0 72px;
   }
@@ -396,9 +393,9 @@ p{
   }
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .cards {
     grid-template-columns: 1fr;
     padding: 0 32px;
   }
-}
+} */

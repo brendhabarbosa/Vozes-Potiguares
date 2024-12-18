@@ -264,7 +264,7 @@
     font-weight: bold;
   }
   
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     header nav {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -297,19 +297,4 @@
     .BusqueporGenerocidade:nth-child(1) {
       margin-top: 0;
     }
-  }
-  
-  @media (max-width: 768px) {
-    .cards {
-      grid-template-columns: 1fr;
-      padding: 0 72px;
-    }
-  
-    .carousel.small-screen {
-      display: flex;
-    }
-  
-    .carousel:not(.small-screen) {
-      display: none;
-    }
-  }
+  } */

@@ -35,7 +35,6 @@
                 <div>
                     <label for="">Data de nascimento</label>
                         {{form.data_nascimento}}
-                
                 </div>
 
                 <div>  
@@ -56,6 +55,12 @@
                 <div>
                     <label for="">Confirme sua senha</label>
                     {{form.password}}
+                </div>
+                <div>
+                    <div class="termos">
+                        <input type="checkbox" name="terms" required>
+                        <label for="terms">Eu aceito os <a href="{% url 'termosdeuso' %}">Termos de uso</a></label>
+                    </div>
                 </div>
                 <a href="{% url 'paginadelogin' %}"><button>Cadastre-se</button></a>
             </form>
