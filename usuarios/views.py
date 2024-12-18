@@ -34,9 +34,11 @@ def index(request):
 @login_required(login_url='/paginadelogin')
 def autor(request):
     usuario = Usuario.objects.get(username=request.user.username)
+    obras = Texto.objects.filter(autor=usuario).count()
+    curtidas = Curtidas.objects.filter(usuario=usuario).count()
     edicao = False
 
-    return render(request, 'usuarios/autor.html', context={ 'edicao': edicao})
+    return render(request, 'usuarios/autor.html', context={ 'edicao': edicao, 'usuario': usuario, 'obras': obras, 'curtidas': curtidas })
 
 def visitar_autor(request, autor_id):
     usuario = Usuario.objects.get(id=autor_id)
@@ -76,7 +78,9 @@ def autor_obras(request):
 
     context = {
         'obras': obras,
-        'curtidas': curtidas
+        'num_obras': obras.count(),
+        'curtidas': curtidas,
+        'num_curtidas': curtidas.count()
     }
 
     return render(request, 'usuarios/autor_obras.html', context=context)

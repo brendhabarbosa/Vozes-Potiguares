@@ -62,7 +62,7 @@ def editar_texto(request, texto_id):
             texto.data_de_publicacao = date.today()
             texto.devolvido = False
             texto.save()
-            # Salva a notícia no banco
+            # Salva no banco
             return redirect('autor')  # Redireciona para página de sucesso
     else:
         form = TextoForm(instance=obra) 
@@ -225,7 +225,7 @@ def analisar_texto(request):
 
 def listadeautores(request):
     lista_autores = Usuario.objects.all().order_by('nome_completo')
-    paginator = Paginator(lista_autores, 9)  
+    paginator = Paginator(lista_autores, 6)  
     
     page = request.GET.get('page', 1)
     try:

@@ -32,10 +32,8 @@
 
             </div>
             <ul id="infos">
-                <li><p class="number">01</p><a href="">Obras</a></li>
-                <li><p class="number">02</p><a href="">Seguidores</a></li>
-                <li><p class="number">03</p><a href="">Curtidas</a></li>
-                <li><p class="number">04</p><a href="">Seguindo</a></li>
+                <li><p class="number">{{num_obras}}</p><a href="">Obras</a></li>
+                <li><p class="number">{{num_curtidas}}</p><a href="">Curtidas</a></li>
             </ul>
         </div>
     </div>
@@ -64,7 +62,6 @@
                     </div>
                     <div class="informações">
                         <button type="button" class="acao-obras" onclick="abrirObraMenu('{{ forloop.counter }}')"><span class="material-symbols-outlined">more_vert</span></button>
-                        <p id="qnt_curtidas">4 curtidas</p>
                         <div class="menu-obras" id="menu-obras-{{ forloop.counter }}">
                             <div class="Titulodomenu"><span onclick="abrirObraMenu('{{ forloop.counter }}')" id="fechar" class="material-symbols-outlined">close</span></div>
                             <ul>
