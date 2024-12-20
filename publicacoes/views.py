@@ -164,9 +164,14 @@ def textosporcidade(request, id):
     try:
         obras = paginator.get_page(page)
     except:
-        obras = paginator.get_page(1)
+        obras = paginator.get_page(1)   
+    
+    curtidas_por_obras = Texto.objects.filter(publicacao=True, autor__cidade=id).annotate(total_curtidas=models.Count('curtidas')).order_by('-total_curtidas').filter(total_curtidas__gt=0)
 
-    return render(request, 'publicacoes/textosporcidade.html', { 'obras': obras, 'cidade': cidade })
+    curtidas = curtidas_por_obras[:3]
+    print(curtidas)
+
+    return render(request, 'publicacoes/textosporcidade.html', { 'obras': obras, 'cidade': cidade, 'curtidas': curtidas })
 
 def textosporgenero(request, genero):
     # genero = request.GET.get('genero', None)
@@ -194,14 +199,15 @@ def textosporgenero(request, genero):
     except:
         obras = paginator.get_page(1)
     
-    curtidas_por_obras = Curtidas.objects.filter(texto__in=obras).annotate(total_curtidas=models.Count('texto')).order_by('total_curtidas')
+    curtidas_por_obras = Texto.objects.filter(publicacao=True, genero=genero_obj).annotate(total_curtidas=models.Count('curtidas')).order_by('-total_curtidas').filter(total_curtidas__gt=0)
 
-    curtidas = []
-    contador = 0
-    for curtida_por_obra in curtidas_por_obras:
-        if contador < 3:
-            curtidas.append(curtida_por_obra)
-            contador += 1
+    curtidas = curtidas_por_obras[:3]
+    # contador = 0
+    # for curtida_por_obra in curtidas_por_obras:
+    #     if contador < 3:
+    #         curtidas.append(curtida_por_obra)
+    #         contador += 1
+
     contexto = {
         'obras': obras,
         'nome_genero': nome_genero,
@@ -224,7 +230,7 @@ def analisar_texto(request):
 
 
 def listadeautores(request):
-    lista_autores = Usuario.objects.all().order_by('nome_completo')
+    lista_autores = Usuario.objects.filter(is_superuser=False).order_by('nome_completo')
     paginator = Paginator(lista_autores, 6)  
     
     page = request.GET.get('page', 1)
