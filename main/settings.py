@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1l*3a-_r-82&0e2esrkz62%8z4=p-l&7r*ekwv1^qr3dhpuzq-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:84','https://vozespotiguares.nadic.com.br']
 
 # Application definition
 
@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'db.postgresql',
         'USER': 'postgres',
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': '127.0.0.1',
+        'HOST': os.getenv('DB_HOST'),
         'PORT': '5432'
     }
 }
@@ -131,6 +131,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #MEDIA
 MEDIA_URL = '/media/'

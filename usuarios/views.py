@@ -37,8 +37,10 @@ def autor(request):
     obras = Texto.objects.filter(autor=usuario).count()
     curtidas = Curtidas.objects.filter(usuario=usuario).count()
     edicao = False
+    is_admin = usuario.is_staff
+        
 
-    return render(request, 'usuarios/autor.html', context={ 'edicao': edicao, 'usuario': usuario, 'obras': obras, 'curtidas': curtidas })
+    return render(request, 'usuarios/autor.html', context={ 'edicao': edicao, 'usuario': usuario, 'obras': obras, 'curtidas': curtidas, 'is_admin': is_admin })
 
 def visitar_autor(request, autor_id):
     usuario = Usuario.objects.get(id=autor_id)

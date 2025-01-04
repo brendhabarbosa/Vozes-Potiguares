@@ -24,10 +24,14 @@
                             @{{usuario.username}}
                         </li>
                     </ul>
+                {% if is_admin %} 
+                    <a class="edit-link" href="{% url 'analisar_texto' %}" ><button type="button">Analisar textos</button></a>
+                {% else %}
                     <div class="direcaodosbutoes"> 
-                        <a class="edit-link" href="{% url 'editar_perfil'%}"><button type="button">Editar</button><a/> 
-                        <a class="edit-link" href="{% url 'postagem'%}"><button type="button">Publicar</button><a/>
+                        <a class="edit-link" href="{% url 'editar_perfil'%}"><button type="button">Editar</button></a> 
+                        <a class="edit-link" href="{% url 'postagem'%}"><button type="button">Publicar</button></a>
                     </div>
+                {% endif %}
                 </div>
                 <ul id="infos">
                     <li><p class="number">{{obras}}</p><a href="">Obras</a></li>
@@ -55,11 +59,11 @@
                         {% if usuario.sobre != '' %}
                         {{usuario.sobre}}
                         {% else %}
-                        Este usuário não possui informações aqui.
+                        Este usuário não possui informações aqui.kkk
                         {% endif %}
                     {% endif %}
             </div>
         </div>
-        <form/>
+        <form\>
     </main>
 {% endblock %}    

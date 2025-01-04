@@ -1,0 +1,43 @@
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile
+
+    image: django_vozes
+    depends_on:
+      - nginx
+    env_file:
+      - .env
+    volumes:
+      - static_data:/app/staticfiles
+      - media_data:/app/media
+    #    ports:
+    #      - '5000:5000'
+    command: ./start
+    restart: unless-stopped
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./compose/nginx/Dockerfile
+    volumes:
+      - static_data:/app/staticfiles
+      - media_data:/app/media
+    ports:
+      - 84:80
+    restart: unless-stopped
+  
+  postgres:
+    image: postgres:13.0-alpine
+    env_file:
+      - .env
+    volumes:
+      - banco_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  static_data:
+  banco_data:
+  media_data:
